@@ -33,7 +33,6 @@ public class ProtagonistaActivity extends AppCompatActivity implements SelectPj.
     public int magia = 10;
     String nombre = "";
 
-    Protagonista protagonista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -187,8 +186,14 @@ public class ProtagonistaActivity extends AppCompatActivity implements SelectPj.
 
                 nombre = name.getText().toString();
                 if (puntos == 0){
+                    Protagonista.setImagen(imagen);
+                    Protagonista.setVida(vida);
+                    Protagonista.setFuerza(fuerza);
+                    Protagonista.setDefensa(defensa);
+                    Protagonista.setAgilidad(agilidad);
+                    Protagonista.setMagia(magia);
+                    Protagonista.setNombre(nombre);
 
-                    protagonista = new Protagonista(imagen, vida, fuerza, agilidad, defensa, magia, nombre);
                     System.out.println();
                     System.out.println("hola");
                     startActivity(inico);

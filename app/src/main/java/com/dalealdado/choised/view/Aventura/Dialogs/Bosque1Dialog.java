@@ -4,21 +4,23 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.dalealdado.dalealdado.R;
 import com.dalealdado.choised.model.Protagonista;
+import com.dalealdado.dalealdado.R;
 
-public class FuenteDialog {
+public class Bosque1Dialog{
 
     TextView name, texto;
     ImageView pj, npc, next;
     String [] historia= {"PRUEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA ", " "};
 
-    public FuenteDialog(final Context context){
+    public Bosque1Dialog(final Context context){
         final Dialog dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(false);
@@ -72,6 +74,4 @@ public class FuenteDialog {
 
         dialog.show();
     }
-
-
 }

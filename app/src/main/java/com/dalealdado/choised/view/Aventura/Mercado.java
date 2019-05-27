@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.dalealdado.choised.view.Aventura.Dialogs.CarniceriaDialog;
+import com.dalealdado.choised.view.Aventura.Dialogs.FuenteDialog;
 import com.dalealdado.dalealdado.R;
 
 public class Mercado extends AppCompatActivity {
@@ -22,6 +24,8 @@ public class Mercado extends AppCompatActivity {
 
 
         barrioMagia = new Intent(this, BarrioMagia.class);
+
+        new CarniceriaDialog(this);
 
         mIzquierda.setOnClickListener(new View.OnClickListener() {
             @Override

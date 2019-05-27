@@ -7,27 +7,39 @@
     tools:context="com.dalealdado.choised.view.Aventura.Dialogs.FuenteDialog">
 
     <ImageView
+        android:id="@+id/pj"
+        android:layout_width="246dp"
+        android:layout_height="242dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="290dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/npc"
+        android:layout_width="246dp"
+        android:layout_height="242dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="220dp"
+        app:layout_constraintBottom_toTopOf="@+id/madera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
         android:id="@+id/madera"
         android:layout_width="wrap_content"
         android:layout_height="301dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintTop_toBottomOf="@+id/pj"
         app:srcCompat="@drawable/tablon" />
-
-    <ImageView
-        android:id="@+id/pj"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="290dp"
-        android:layout_marginBottom="-20dp"
-        app:layout_constraintBottom_toTopOf="@+id/madera"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/name"
@@ -52,7 +64,6 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
         android:textColor="@color/colorLetrasMadera"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/madera"
@@ -60,17 +71,6 @@
         app:layout_constraintStart_toStartOf="@+id/madera"
         app:layout_constraintTop_toBottomOf="@+id/name"
         app:layout_constraintVertical_bias="0.01999998" />
-
-    <ImageView
-        android:id="@+id/npc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/madera"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
         android:id="@+id/next"
@@ -85,5 +85,32 @@
         app:layout_constraintTop_toBottomOf="@+id/texto"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/next" />
+
+    <Button
+        android:id="@+id/opcion1"
+        android:layout_width="202dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="Button"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <Button
+        android:id="@+id/opcion2"
+        android:layout_width="202dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Button"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/opcion1" />
 
 </android.support.constraint.ConstraintLayout>

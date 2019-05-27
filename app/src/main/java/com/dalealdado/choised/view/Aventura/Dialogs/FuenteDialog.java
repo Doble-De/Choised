@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
@@ -16,10 +17,12 @@ public class FuenteDialog {
 
     TextView name, texto;
     ImageView pj, npc, next;
-    String [] historia= {"PRUEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA ", " "};
-
+    String [] historia= {"Bueno, ya estoy en el pueblo", "*cogeria la hoja y miraria la mison*", "... 6 trozos de carne de jabali ...", "Buscare la carniceria para preguntarle al carnicero, a ver que me dice"};
+    int cont = 1;
     public FuenteDialog(final Context context){
         final Dialog dialog = new Dialog(context);
+        Window window = dialog.getWindow();
+        window.setGravity(Gravity.BOTTOM);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(false);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -34,7 +37,8 @@ public class FuenteDialog {
         npc.setImageResource(R.color.transparente);
 
         name.setText(Protagonista.getNombre());
-        texto.setText(historia[1]);
+        texto.setText(historia[0]);
+
 
         switch (Protagonista.getImagen()){
             case 1:
@@ -66,7 +70,14 @@ public class FuenteDialog {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.dismiss();
+                if (cont ==4){
+                    dialog.dismiss();
+                } else {
+                    texto.setText(historia[cont]);
+                    cont++;
+                }
+
+
             }
         });
 

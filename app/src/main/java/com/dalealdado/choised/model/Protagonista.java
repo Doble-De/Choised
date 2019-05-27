@@ -67,6 +67,10 @@ public class Protagonista {
         Protagonista.nombre = nombre;
     }
 
+    public static void setDinero(int dinero) {
+        Protagonista.dinero = dinero;
+    }
+
     public void añadirInventario(int id){
         for (int i = 0; i < inventario.length; i++) {
             if (inventario[i] == 0){

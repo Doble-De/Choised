@@ -43,13 +43,9 @@ public class CarniceriaDialog{
         opcion1 = dialog.findViewById(R.id.opcion1);
         opcion2 = dialog.findViewById(R.id.opcion2);
 
-        npc.setImageResource(R.color.transparente);
-
-        name.setText(Protagonista.getNombre());
+        turnoprota();
         texto.setText(historia[0]);
 
-
-        imagenProta();
 
         opcion1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +80,7 @@ public class CarniceriaDialog{
                 opcion2.setVisibility(View.INVISIBLE);
                 next.setVisibility(View.VISIBLE);
 
+                turnonpc();
                 listo = true;
                 cont = 0;
                 texto.setText(ready[cont2]);
@@ -142,27 +139,19 @@ public class CarniceriaDialog{
         switch (cont){
             case 1:
                 texto.setText(historia[cont]);
-                pj.setImageResource(R.color.transparente);
-                npc.setImageResource(R.drawable.viejo_carnicero);
-                name.setText("Anciano Carnicero");
+                turnonpc();
                 break;
             case 2:
                 texto.setText(historia[cont]);
-                imagenProta();
-                npc.setImageResource(R.color.transparente);
-                name.setText(Protagonista.getNombre());
+                turnoprota();
                 break;
             case 3:
                 texto.setText(historia[cont]);
-                pj.setImageResource(R.color.transparente);
-                npc.setImageResource(R.drawable.viejo_carnicero);
-                name.setText("Anciano Carnicero");
+                turnonpc();
                 break;
             case 4:
                 texto.setText(historia[cont]);
-                imagenProta();
-                npc.setImageResource(R.color.transparente);
-                name.setText(Protagonista.getNombre());
+                turnoprota();
                 break;
         }
     }
@@ -172,27 +161,21 @@ public class CarniceriaDialog{
         switch (cont2){
             case 1:
                 texto.setText(dinero[cont2]);
+                turnonpc();
                 break;
             case 2:
                 texto.setText(dinero[cont2]);
-                pj.setImageResource(R.color.transparente);
-                npc.setImageResource(R.drawable.viejo_carnicero);
-                name.setText("Anciano Carnicero");
                 break;
             case 3:
                 texto.setText(dinero[cont2]);
+                turnoprota();
                 break;
             case 4:
                 texto.setText(dinero[cont2]);
-                imagenProta();
-                npc.setImageResource(R.color.transparente);
-                name.setText(Protagonista.getNombre());
+                turnonpc();
                 break;
             case 5:
                 texto.setText(dinero[cont2]);
-                pj.setImageResource(R.color.transparente);
-                npc.setImageResource(R.drawable.viejo_carnicero);
-                name.setText("Anciano Carnicero");
                 break;
             case 6:
                 texto.setText(dinero[cont2]);
@@ -202,9 +185,7 @@ public class CarniceriaDialog{
                 break;
             case 7:
                 texto.setText(dinero[cont2]);
-                imagenProta();
-                npc.setImageResource(R.color.transparente);
-                name.setText(Protagonista.getNombre());
+                turnoprota();
                 break;
 
         }
@@ -215,18 +196,18 @@ public class CarniceriaDialog{
         switch (cont2){
             case 1:
                 texto.setText(ready[cont2]);
+                turnoprota();
                 break;
             case 2:
                 texto.setText(ready[cont2]);
                 break;
             case 3:
                 texto.setText(ready[cont2]);
+                turnonpc();
                 break;
             case 4:
                 texto.setText(ready[cont2]);
-                break;
-            case 5:
-                texto.setText(ready[cont2]);
+                turnoprota();
                 break;
         }
     }
@@ -258,5 +239,17 @@ public class CarniceriaDialog{
                 pj.setImageResource(R.drawable.pf4);
                 break;
         }
+    }
+
+    void turnoprota(){
+        npc.setImageResource(R.color.transparente);
+        name.setText(Protagonista.getNombre());
+        imagenProta();
+    }
+
+    void turnonpc(){
+        pj.setImageResource(R.color.transparente);
+        npc.setImageResource(R.drawable.viejo_carnicero);
+        name.setText("Anciano Carnicero");
     }
 }

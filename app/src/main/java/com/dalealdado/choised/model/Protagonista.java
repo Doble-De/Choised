@@ -4,8 +4,9 @@ public class Protagonista {
 
     static int imagen, vida, fuerza, agilidad, defensa, magia, dinero;
     static String nombre;
-    int[] inventario = new int[6];
-    int[] cantidad = new int[6];
+    static Boolean a;
+    static int[] inventario = new int[6];
+    static int[] cantidad = new int[6];
 
     public static int getImagen() {
         return imagen;
@@ -71,7 +72,7 @@ public class Protagonista {
         Protagonista.dinero = dinero;
     }
 
-    public void añadirInventario(int id){
+    public static void añadirInventario(int id){
         for (int i = 0; i < inventario.length; i++) {
             if (inventario[i] == 0){
                 inventario[i] = id;

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.dalealdado.choised.model.Protagonista;
 import com.dalealdado.choised.view.Aventura.Dialogs.FuenteDialog;
 import com.dalealdado.dalealdado.R;
 
@@ -34,7 +35,9 @@ public class Fuente extends AppCompatActivity {
             castillo = new Intent(Fuente.this, Castillo.class);
             bosque = new Intent(Fuente.this, Bosque1.class);
 
-            new FuenteDialog(context);
+            if (Protagonista.getInicio()){
+                new FuenteDialog(context);
+            }
 
             mArriba.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -47,7 +50,11 @@ public class Fuente extends AppCompatActivity {
             mDerecha.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(bosque);
+                    if (Protagonista.getCarniceria()){
+                        new FuenteDialog(context);
+                    }else {
+                        startActivity(bosque);
+                    }
                 }
             });
 

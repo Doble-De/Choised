@@ -187,12 +187,20 @@ public class ProtagonistaActivity extends AppCompatActivity implements SelectPj.
                 nombre = name.getText().toString();
                 if (puntos == 0){
                     Protagonista.setImagen(imagen);
-                    Protagonista.setVida(vida);
+                    Protagonista.setVidaMaxima(vida);
                     Protagonista.setFuerza(fuerza);
                     Protagonista.setDefensa(defensa);
                     Protagonista.setAgilidad(agilidad);
                     Protagonista.setMagia(magia);
                     Protagonista.setNombre(nombre);
+                    Protagonista.setDinero(20);
+                    Protagonista.setInicio(true);
+                    Protagonista.setCarniceria(true);
+                    Protagonista.setJabali(false);
+                    Protagonista.setAviso(false);
+                    Protagonista.setCarta(false);
+                    Protagonista.setBandido(false);
+                    Protagonista.setPagado(false);
 
                     System.out.println();
                     System.out.println("hola");

@@ -1,4 +1,4 @@
-package com.dalealdado.choised;
+package com.dalealdado.choised.model;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;

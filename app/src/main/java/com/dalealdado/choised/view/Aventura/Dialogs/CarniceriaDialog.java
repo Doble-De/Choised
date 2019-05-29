@@ -110,6 +110,7 @@ public class CarniceriaDialog{
                     cont2++;
                     if ( cont2 == dinero.length ){
                         dialog.dismiss();
+                        Protagonista.setCarniceria(false);
                     } else{
                         rutaDinero();
                     }
@@ -118,6 +119,7 @@ public class CarniceriaDialog{
                     cont2++;
                     if ( cont2 == ready.length ){
                         dialog.dismiss();
+                        Protagonista.setCarniceria(false);
                     } else{
                         rutaGo();
                     }

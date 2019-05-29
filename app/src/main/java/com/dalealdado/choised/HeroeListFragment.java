@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.dalealdado.choised.model.Heroe;
 import com.dalealdado.dalealdado.R;
 
 import java.util.List;

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.dalealdado.choised.model.Escenario;
 import com.dalealdado.dalealdado.R;
 
 public class EscenarioNewActivity extends AppCompatActivity {

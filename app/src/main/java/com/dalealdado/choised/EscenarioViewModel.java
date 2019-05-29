@@ -4,6 +4,8 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 
+import com.dalealdado.choised.model.Escenario;
+
 import java.util.List;
 
 public class EscenarioViewModel extends AndroidViewModel {

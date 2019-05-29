@@ -2,11 +2,79 @@ package com.dalealdado.choised.model;
 
 public class Protagonista {
 
-    static int imagen, vida, fuerza, agilidad, defensa, magia, dinero;
+    static int imagen, vida=0, fuerza, agilidad, defensa, magia, dinero, carne, vidaMaxima;
     static String nombre;
-    static Boolean a;
+    static Boolean inicio = true, carniceria = true, jabali= false, aviso=false, carta=false, bandido=true, pagado=false;
     static int[] inventario = new int[6];
     static int[] cantidad = new int[6];
+
+    public static int getVidaMaxima() {
+        return vidaMaxima;
+    }
+
+    public static Boolean getInicio() {
+        return inicio;
+    }
+
+    public static void setInicio(Boolean inicio) {
+        Protagonista.inicio = inicio;
+    }
+
+    public static Boolean getCarniceria() {
+        return carniceria;
+    }
+
+    public static void setCarniceria(Boolean carniceria) {
+        Protagonista.carniceria = carniceria;
+    }
+
+    public static Boolean getJabali() {
+        return jabali;
+    }
+
+    public static void setJabali(Boolean jabali) {
+        Protagonista.jabali = jabali;
+    }
+
+    public static Boolean getAviso() {
+        return aviso;
+    }
+
+    public static void setAviso(Boolean aviso) {
+        Protagonista.aviso = aviso;
+    }
+
+    public static Boolean getCarta() {
+        return carta;
+    }
+
+    public static void setCarta(Boolean carta) {
+        Protagonista.carta = carta;
+    }
+
+    public static Boolean getBandido() {
+        return bandido;
+    }
+
+    public static void setBandido(Boolean bandido) {
+        Protagonista.bandido = bandido;
+    }
+
+    public static Boolean getPagado() {
+        return pagado;
+    }
+
+    public static void setPagado(Boolean pagado) {
+        Protagonista.pagado = pagado;
+    }
+
+    public static int getCarne() {
+        return carne;
+    }
+
+    public static void setCarne(int carne) {
+        Protagonista.carne = carne;
+    }
 
     public static int getImagen() {
         return imagen;
@@ -22,6 +90,10 @@ public class Protagonista {
 
     public static int getAgilidad() {
         return agilidad;
+    }
+
+    public static void setVidaMaxima(int vidaMaxima) {
+        Protagonista.vidaMaxima = vidaMaxima;
     }
 
     public static int getDefensa() {
@@ -45,7 +117,7 @@ public class Protagonista {
     }
 
     public static void setVida(int vida) {
-        Protagonista.vida = vida;
+                Protagonista.vida = vida;
     }
 
     public static void setFuerza(int fuerza) {

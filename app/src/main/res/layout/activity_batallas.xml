@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/batalla"
+    tools:context="com.dalealdado.choised.view.Aventura.BatallasActivity">
+
+    <ImageView
+        android:id="@+id/fondo"
+        android:layout_width="419dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/batallastablon" />
+
+    <Button
+        android:id="@+id/huir"
+        android:layout_width="164dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/boton"
+        android:text="Huir"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.731" />
+
+    <Button
+        android:id="@+id/ataque"
+        android:layout_width="164dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/boton"
+        android:text="Atacar"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/objeto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/objeto"
+        android:layout_width="164dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/boton"
+        android:text="Objetos"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.727" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Elige una Opción"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.68" />
+
+    <Button
+        android:id="@+id/defensa"
+        android:layout_width="164dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/boton"
+        android:text="Defender"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/huir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/valor"
+        android:layout_width="wrap_content"
+        android:layout_height="71dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="60sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/valore"
+        android:layout_width="wrap_content"
+        android:layout_height="71dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="0"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/enemigo"
+        android:layout_width="141dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/barravida"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/cazador"
+        tools:srcCompat="@drawable/cazador" />
+
+    <ImageView
+        android:id="@+id/animataque"
+        android:layout_width="141dp"
+        android:layout_height="135dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/enemigo"
+        app:layout_constraintEnd_toEndOf="@+id/enemigo"
+        app:layout_constraintStart_toStartOf="@+id/enemigo"
+        app:layout_constraintTop_toTopOf="@+id/enemigo"
+        app:layout_constraintVertical_bias="0.52"
+        app:srcCompat="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/personaje"
+        android:layout_width="141dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/barravida"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/valor"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/pm1"
+        tools:srcCompat="@drawable/pm1" />
+
+    <ImageView
+        android:id="@+id/escudo"
+        android:layout_width="97dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/personaje"
+        app:layout_constraintStart_toStartOf="@+id/personaje"
+        app:layout_constraintTop_toTopOf="@+id/personaje"
+        app:srcCompat="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/animdefensa"
+        android:layout_width="56dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/escudo"
+        app:layout_constraintEnd_toEndOf="@+id/escudo"
+        app:layout_constraintStart_toStartOf="@+id/escudo"
+        app:layout_constraintTop_toTopOf="@+id/escudo"
+        app:srcCompat="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/estados"
+        android:layout_width="136dp"
+        android:layout_height="135dp"
+        app:layout_constraintBottom_toBottomOf="@+id/personaje"
+        app:layout_constraintEnd_toEndOf="@+id/personaje"
+        app:layout_constraintStart_toStartOf="@+id/personaje"
+        app:layout_constraintTop_toTopOf="@+id/personaje"
+        app:srcCompat="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/bocadillo"
+        android:layout_width="120dp"
+        android:layout_height="109dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/animataque"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.767"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98"
+        app:srcCompat="@drawable/bocadillo" />
+
+    <ImageView
+        android:id="@+id/gifdado"
+        android:layout_width="46dp"
+        android:layout_height="58dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bocadillo"
+        app:layout_constraintEnd_toEndOf="@+id/bocadillo"
+        app:layout_constraintStart_toStartOf="@+id/bocadillo"
+        app:layout_constraintTop_toTopOf="@+id/bocadillo"
+        app:srcCompat="@drawable/dado" />
+
+    <ProgressBar
+        android:id="@+id/barravida"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="401dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:progressDrawable="@drawable/customprogresbar"
+        app:layout_constraintBottom_toTopOf="@+id/fondo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:style="@style/Widget.AppCompat.ProgresBar" />
+
+    <TextView
+        android:id="@+id/vidarest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100 / 100"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/barravida"
+        app:layout_constraintEnd_toEndOf="@+id/barravida"
+        app:layout_constraintStart_toStartOf="@+id/barravida"
+        app:layout_constraintTop_toTopOf="@+id/barravida" />
+
+</android.support.constraint.ConstraintLayout>

@@ -8,19 +8,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.dalealdado.choised.model.Protagonista;
 import com.dalealdado.dalealdado.R;
 
-public class Bosque1Dialog{
+public class Bosque1Dialog {
 
     TextView name, texto;
     ImageView pj, npc, next;
-    String [] historia= {"PRUEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA ", " "};
+    Button opcion1, opcion2;
+    int cont = 0, cont2 = 0;
+    boolean money = false, listo = false;
+    String[] historia = {"Vaya vaya...", "Parece que hay un intruso en mi bosque","¿Ehh? ¿Como que tu bosque?", "Como lo oyes, he vivido en este bosque toda mi vida","por lo tanto es mi bosque","Vaya logica...","He visto que has estado cazando jabalies","Si, para el carnicero de la ciudad","No me importa, o me pagas 10 de oro de comision...","O lo vas a pasar mal","¿¡QUE!?"};
+    String[] dinero = {"Bueno, toma...","JAJAJAJAJAJAJA","Asi me gusta","gente que sepa lo que es de lo demas.","Quedate por aqui el tiempo que quieras", "ahora eres mi invitado","Ehh... Gracias supongo","Venga que vaya bien"};
+    String[] pelea = {"No te voy a dar nada", "Te vas a arrepentir", "Ya veremos..."};
 
-    public Bosque1Dialog(final Context context){
+    public Bosque1Dialog(final Context context) {
         final Dialog dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(false);
@@ -32,13 +40,195 @@ public class Bosque1Dialog{
         next = dialog.findViewById(R.id.next);
         pj = dialog.findViewById(R.id.pj);
         npc = dialog.findViewById(R.id.npc);
+        opcion1 = dialog.findViewById(R.id.opcion1);
+        opcion2 = dialog.findViewById(R.id.opcion2);
 
-        npc.setImageResource(R.color.transparente);
+        turnoprota();
+        texto.setText(historia[0]);
 
-        name.setText(Protagonista.getNombre());
-        texto.setText(historia[1]);
 
-        switch (Protagonista.getImagen()){
+        opcion1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                YoYo.with(Techniques.ZoomOut)
+                        .duration(1000)
+                        .playOn(opcion1);
+                YoYo.with(Techniques.ZoomOut)
+                        .duration(500)
+                        .playOn(opcion1);
+                opcion1.setVisibility(View.INVISIBLE);
+                opcion2.setVisibility(View.INVISIBLE);
+                next.setVisibility(View.VISIBLE);
+                Protagonista.setDinero(Protagonista.getDinero() + 10);
+
+                money = true;
+                cont = 0;
+                texto.setText(dinero[cont2]);
+            }
+        });
+
+        opcion2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                YoYo.with(Techniques.ZoomOut)
+                        .duration(500)
+                        .playOn(opcion1);
+                YoYo.with(Techniques.ZoomOut)
+                        .duration(1000)
+                        .playOn(opcion1);
+                opcion1.setVisibility(View.INVISIBLE);
+                opcion2.setVisibility(View.INVISIBLE);
+                next.setVisibility(View.VISIBLE);
+
+                turnonpc();
+                listo = true;
+                cont = 0;
+                texto.setText(pelea[cont2]);
+            }
+        });
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                if (cont == 4) {
+                    texto.setText("");
+                    opcion1.setText("Pedirle dinero por adelantado");
+                    opcion2.setText("Ir a la mision");
+                    opcion1.setVisibility(View.VISIBLE);
+                    opcion2.setVisibility(View.VISIBLE);
+                    next.setVisibility(View.INVISIBLE);
+                    YoYo.with(Techniques.ZoomIn)
+                            .duration(1000)
+                            .playOn(opcion1);
+                    YoYo.with(Techniques.ZoomIn)
+                            .duration(1200)
+                            .playOn(opcion2);
+                } else if (money) {
+                    cont2++;
+                    if (cont2 == dinero.length) {
+                        dialog.dismiss();
+                        Protagonista.setCarniceria(false);
+                    } else {
+                        rutaDinero();
+                    }
+                } else if (listo) {
+                    cont2++;
+                    if (cont2 == pelea.length) {
+                        dialog.dismiss();
+                        Protagonista.setCarniceria(false);
+                    } else {
+                        rutaGo();
+                    }
+                } else {
+                    cont++;
+                    ponerTexto();
+                }
+
+
+            }
+        });
+
+        dialog.show();
+    }
+
+    public void ponerTexto() {
+
+        switch (cont) {
+            case 1:
+                texto.setText(historia[cont]);
+                turnonpc();
+                break;
+            case 2:
+                texto.setText(historia[cont]);
+                turnoprota();
+                break;
+            case 3:
+                texto.setText(historia[cont]);
+                turnonpc();
+                break;
+            case 4:
+                texto.setText(historia[cont]);
+                turnoprota();
+                break;
+            case 5:
+                texto.setText(historia[cont]);
+                turnoprota();
+                break;
+            case 6:
+                texto.setText(historia[cont]);
+                turnoprota();
+                break;
+            case 7:
+                texto.setText(historia[cont]);
+                turnoprota();
+                break;
+            case 8:
+                texto.setText(historia[cont]);
+                turnoprota();
+                break;
+            case 9:
+                texto.setText(historia[cont]);
+                turnoprota();
+                break;
+            case 10:
+                texto.setText(historia[cont]);
+                turnoprota();
+                break;
+        }
+    }
+
+    public void rutaDinero() {
+
+        switch (cont2) {
+            case 1:
+                texto.setText(dinero[cont2]);
+                turnonpc();
+                break;
+            case 2:
+                texto.setText(dinero[cont2]);
+                break;
+            case 3:
+                texto.setText(dinero[cont2]);
+                turnoprota();
+                break;
+            case 4:
+                texto.setText(dinero[cont2]);
+                turnonpc();
+                break;
+            case 5:
+                texto.setText(dinero[cont2]);
+                break;
+            case 6:
+                texto.setText(dinero[cont2]);
+                pj.setImageResource(R.color.transparente);
+                npc.setImageResource(R.color.transparente);
+                name.setText("");
+                break;
+            case 7:
+                texto.setText(dinero[cont2]);
+                turnoprota();
+                break;
+
+        }
+
+    }
+
+    public void rutaGo() {
+        switch (cont2) {
+            case 1:
+                texto.setText(pelea[cont2]);
+                turnoprota();
+                break;
+            case 2:
+                texto.setText(pelea[cont2]);
+                break;
+        }
+    }
+
+    void imagenProta() {
+        switch (Protagonista.getImagen()) {
             case 1:
                 pj.setImageResource(R.drawable.pm1);
                 break;
@@ -64,14 +254,17 @@ public class Bosque1Dialog{
                 pj.setImageResource(R.drawable.pf4);
                 break;
         }
+    }
 
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
+    void turnoprota() {
+        npc.setImageResource(R.color.transparente);
+        name.setText(Protagonista.getNombre());
+        imagenProta();
+    }
 
-        dialog.show();
+    void turnonpc() {
+        pj.setImageResource(R.color.transparente);
+        npc.setImageResource(R.drawable.viejo_carnicero);
+        name.setText("Anciano Carnicero");
     }
 }

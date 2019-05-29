@@ -1,17 +1,17 @@
-package com.dalealdado.choised;
+package com.dalealdado.choised.model;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity
-public class Enemigo {
+public class Heroe {
     @PrimaryKey(autoGenerate = true)
     public int id;
 
     public String nombre;
     public String raza;
     public String descripcion;
-    public String drop;
+    public String inventario;
     public String habilidades;
     public String vida;
     public String fuerza;
@@ -20,4 +20,5 @@ public class Enemigo {
     public String agilidad;
     public String mana;
     public String magia;
+
 }

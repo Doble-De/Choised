@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.dalealdado.choised.model.Escenario;
 import com.dalealdado.dalealdado.R;
 
 public class EscenarioShowActivity extends AppCompatActivity {

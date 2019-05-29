@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.dalealdado.choised.model.Heroe;
 import com.dalealdado.dalealdado.R;
 import com.dalealdado.choised.view.HeroesShowActivity;
 

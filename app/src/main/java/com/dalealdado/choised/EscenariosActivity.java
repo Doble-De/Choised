@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.dalealdado.choised.model.Escenario;
 import com.dalealdado.dalealdado.R;
 
 import java.util.List;

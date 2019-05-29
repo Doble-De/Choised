@@ -6,6 +6,10 @@ import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 
+import com.dalealdado.choised.model.Enemigo;
+import com.dalealdado.choised.model.Escenario;
+import com.dalealdado.choised.model.Heroe;
+
 import java.util.List;
 
 @Dao

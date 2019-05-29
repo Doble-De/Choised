@@ -5,6 +5,10 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
+import com.dalealdado.choised.model.Enemigo;
+import com.dalealdado.choised.model.Escenario;
+import com.dalealdado.choised.model.Heroe;
+
 @Database(entities = {Heroe.class, Enemigo.class, Escenario.class}, version = 2)
 public abstract class DADDatabase extends RoomDatabase {
 

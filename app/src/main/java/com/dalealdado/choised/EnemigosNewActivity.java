@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.dalealdado.choised.model.Enemigo;
 import com.dalealdado.dalealdado.R;
 
 public class EnemigosNewActivity extends AppCompatActivity {

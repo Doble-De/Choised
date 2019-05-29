@@ -4,6 +4,10 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 
+import com.dalealdado.choised.model.Enemigo;
+import com.dalealdado.choised.model.Escenario;
+import com.dalealdado.choised.model.Heroe;
+
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;

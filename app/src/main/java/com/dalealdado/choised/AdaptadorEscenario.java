@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.dalealdado.choised.model.Escenario;
 import com.dalealdado.dalealdado.R;
 
 import java.util.List;

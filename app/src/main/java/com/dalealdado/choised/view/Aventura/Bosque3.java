@@ -1,5 +1,6 @@
 package com.dalealdado.choised.view.Aventura;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,10 +9,13 @@ import android.widget.ImageButton;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.dalealdado.choised.model.Protagonista;
+import com.dalealdado.choised.view.Aventura.Dialogs.PreCuevaDialog;
 import com.dalealdado.dalealdado.R;
 
 public class Bosque3 extends AppCompatActivity {
 
+    Context context;
     ImageButton bAbajo,bIzquierda,bDerecha;
     Intent bosque2,cueva1,bosque6;
 
@@ -27,6 +31,7 @@ public class Bosque3 extends AppCompatActivity {
         bosque2 = new Intent( this, Bosque2.class);
         bosque6 = new Intent( this, Bosque6.class);
         cueva1 = new Intent(this, Cueva1.class);
+        context = this;
 
         bAbajo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +54,11 @@ public class Bosque3 extends AppCompatActivity {
             }
         });
 
+
+        if (!Protagonista.getAviso()){
+            new PreCuevaDialog(context);
+        }
+        Protagonista.setAviso(true);
 
         YoYo.with(Techniques.BounceInUp)
                 .duration(5000)

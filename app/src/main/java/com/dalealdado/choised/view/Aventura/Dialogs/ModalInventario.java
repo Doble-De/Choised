@@ -11,13 +11,15 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.dalealdado.choised.model.Protagonista;
 import com.dalealdado.dalealdado.R;
 
 public class ModalInventario {
 
-    int[] item= new int[9];
+    int[] item;
     ImageView ivitem1, ivitem2, ivitem3, ivitem4, ivitem5, ivitem6, ivitem7, ivitem8, ivitem9;
     Button salir;
+
 
 
     public interface ObjetoUsado{
@@ -35,8 +37,7 @@ public class ModalInventario {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.setContentView(R.layout.activity_modal_inventario);
         salir = dialog.findViewById(R.id.exit);
-        item[0] = 1;
-        item[1] = 3;
+        item = Protagonista.getInventario();
 
 
         ivitem1 = (ImageView) dialog.findViewById(R.id.item1);
@@ -56,6 +57,7 @@ public class ModalInventario {
             @Override
             public void onClick(View v) {
                 interfaz.IdObjeto(item[0]);
+                Protagonista.eliminarInventario(item[0]);
                 dialog.dismiss();
             }
         });
@@ -64,6 +66,7 @@ public class ModalInventario {
             @Override
             public void onClick(View v) {
                 interfaz.IdObjeto(item[1]);
+                Protagonista.eliminarInventario(item[1]);
                 dialog.dismiss();
             }
         });
@@ -76,15 +79,6 @@ public class ModalInventario {
         });
         dialog.show();
 
-    }
-
-    public void AñadirOobjeto(int objeto){
-
-        for (int i = 0; i < item.length; i++) {
-            if (item[i] == 0){
-                item[i] = objeto;
-            }
-        }
     }
 
     private void PonerImagen(){
@@ -108,11 +102,12 @@ public class ModalInventario {
             case 1:
                 imageView.setImageResource(R.drawable.potion);
                 break;
-            case 3:
+            case 2:
                 imageView.setImageResource(R.drawable.librog);
                 break;
+            case 3:
+                imageView.setImageResource(R.drawable.emblema);
         }
-
     }
 
 

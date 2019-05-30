@@ -2,11 +2,11 @@ package com.dalealdado.choised.model;
 
 public class Protagonista {
 
-    static int imagen, vida=0, fuerza, agilidad, defensa, magia, dinero, carne=5, vidaMaxima;
+    static int imagen, vida=0, fuerza, agilidad, defensa, magia, dinero, carne=0, vidaMaxima;
     static String nombre;
     static Boolean inicio = true, carniceria = true, jabali= false, aviso=false, carta=false, bandido=true, pagado=false;
-    static int[] inventario = new int[6];
-    static int[] cantidad = new int[6];
+    static int[] inventario = new int[9];
+    static int[] cantidad = new int[9];
 
     public static int getVidaMaxima() {
         return vidaMaxima;
@@ -46,6 +46,10 @@ public class Protagonista {
 
     public static Boolean getCarta() {
         return carta;
+    }
+
+    public static int[] getInventario() {
+        return inventario;
     }
 
     public static void setCarta(Boolean carta) {
@@ -159,7 +163,7 @@ public class Protagonista {
 
     }
 
-    public void eliminarInventario(int id){
+    public static void eliminarInventario(int id){
         for (int i = 0; i < inventario.length; i++) {
             if (inventario[i] == id){
                 cantidad[i] --;
@@ -172,11 +176,14 @@ public class Protagonista {
         acualizarInventario();
     }
 
-    void acualizarInventario(){
+    public static void acualizarInventario(){
         for (int i = 0; i < inventario.length; i++) {
-            if (inventario[i] == 0 && inventario[i+1] != 0){
-                inventario[i] = inventario[i+1];
+            if ( i+1 != inventario.length){
+                if (inventario[i] == 0 && inventario[i+1] != 0){
+                    inventario[i] = inventario[i+1];
+                }
             }
+
         }
     }
 

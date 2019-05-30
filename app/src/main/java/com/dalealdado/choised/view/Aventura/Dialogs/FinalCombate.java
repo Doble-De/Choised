@@ -44,6 +44,8 @@ public class FinalCombate extends AppCompatActivity {
         carne = dialog.findViewById(R.id.carne);
         continuar = dialog.findViewById(R.id.continuar);
 
+        dialog.show();
+
         if (tipo == winjabali){
             titulo.setText("¡HAS GANADO!");
             subtitulo.setText("Botin obtenido:");
@@ -69,10 +71,13 @@ public class FinalCombate extends AppCompatActivity {
             public void onClick(View v) {
                 if (tipo == winjabali){
                     interfaz.continuarAventura("win");
+                    dialog.dismiss();
                 }else if (tipo == win){
                     interfaz.continuarAventura("win");
+                    dialog.dismiss();
                 }else if (tipo == derrota){
                     interfaz.continuarAventura("derrota");
+                    dialog.dismiss();
                 }
             }
         });

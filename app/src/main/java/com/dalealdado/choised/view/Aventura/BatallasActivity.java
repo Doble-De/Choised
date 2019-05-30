@@ -8,6 +8,7 @@ import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -84,7 +85,7 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
         mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
         mAccelerometrer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         mShakeDetector = new ShakeDetector();
-        barravida.setProgress(Protagonista.getVidaMaxima());
+        barravida.setMax(Protagonista.getVidaMaxima());
         barravida.setProgress(Protagonista.getVidaMaxima()-Protagonista.getVida());
         imagenProta();
         vidarestante.setText(String.valueOf(Protagonista.getVidaMaxima()-Protagonista.getVida()+" / "+Protagonista.getVidaMaxima()));
@@ -173,25 +174,10 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
 
             if (tipodeEnemigo.equals(enemigosPosibles[0])) {
                 jabali.setVida(jabali.getVida() - random.nextInt(4)+1);
-                if (jabali.getVida() > 0){
-                    turnoEnemigo();
-                }else {
-                    ganador();
-                }
             }else if (tipodeEnemigo.equals(enemigosPosibles[1])){
                 cazador.setVida(cazador.getVida() - random.nextInt(4)+1);
-                if (cazador.getVida() > 0) {
-                    turnoEnemigo();
-                }else {
-                    ganador();
-                }
             } else if (tipodeEnemigo.equals(enemigosPosibles[2])) {
                 bandido.setVida(bandido.getVida() - random.nextInt(4)+1);
-                if (bandido.getVida() > 0) {
-                    turnoEnemigo();
-                }else {
-                    ganador();
-                }
             }
 
         }else if (num > 5 && num <=17 && accion.equals("ataque")) {
@@ -206,25 +192,10 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
 
             if (tipodeEnemigo.equals(enemigosPosibles[0])) {
                 jabali.setVida(jabali.getVida() - Protagonista.getFuerza());
-                if (jabali.getVida() > 0) {
-                    turnoEnemigo();
-                }else {
-                    ganador();
-                }
             }else if (tipodeEnemigo.equals(enemigosPosibles[1])){
                 cazador.setVida(cazador.getVida() - Protagonista.getFuerza());
-                if (cazador.getVida() > 0) {
-                    turnoEnemigo();
-                }else {
-                    ganador();
-                }
             } else if (tipodeEnemigo.equals(enemigosPosibles[2])) {
                 bandido.setVida(bandido.getVida() - Protagonista.getFuerza());
-                if (bandido.getVida() > 0) {
-                    turnoEnemigo();
-                }else {
-                    ganador();
-                }
             }
 
         }else if (num > 17 && accion.equals("ataque")) {
@@ -238,25 +209,10 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
                     .playOn(corte);
             if (tipodeEnemigo.equals(enemigosPosibles[0])) {
                 jabali.setVida(jabali.getVida() - Protagonista.getFuerza()  * 2);
-                if (jabali.getVida() > 0) {
-                    turnoEnemigo();
-                }else {
-                    ganador();
-                }
             } else if (tipodeEnemigo.equals(enemigosPosibles[1])){
                 cazador.setVida(cazador.getVida() - Protagonista.getFuerza()* 2);
-                if (cazador.getVida() > 0) {
-                    turnoEnemigo();
-                }else {
-                    ganador();
-                }
             } else if (tipodeEnemigo.equals(enemigosPosibles[2])){
                 bandido.setVida(bandido.getVida() - Protagonista.getFuerza()* 2);
-                if (bandido.getVida() > 0) {
-                    turnoEnemigo();
-                }else {
-                    ganador();
-                }
             }
 
         }
@@ -271,6 +227,33 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
             YoYo.with(Techniques.Wobble)
                     .duration(200)
                     .playOn(enemigo);
+
+            if (tipodeEnemigo.equals(enemigosPosibles[0])) {
+                if (jabali.getVida() > 0){
+                    turnoEnemigo();
+                }else {
+                    ganador();
+                    Protagonista.setCarne(Protagonista.getCarne()+1);
+                    if(Protagonista.getCarne() == 6){
+                        Protagonista.setJabali(true);
+                    }
+                }
+            } else if (tipodeEnemigo.equals(enemigosPosibles[1])){
+                if (cazador.getVida() > 0){
+                    turnoEnemigo();
+                }else {
+                    ganador();
+                }
+            } else if (tipodeEnemigo.equals(enemigosPosibles[2])){
+                if (bandido.getVida() > 0){
+                    turnoEnemigo();
+                }else {
+                    ganador();
+                }
+            }
+
+
+
         }
     };
 
@@ -352,6 +335,7 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
                     YoYo.with(Techniques.FadeOutLeft)
                             .duration(1000)
                             .playOn(personaje);
+                    mHandler.postDelayed(huidaexitosa, 1000);
                 }
                 else{
                     turnoEnemigo();
@@ -367,6 +351,7 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
                     YoYo.with(Techniques.FadeOutLeft)
                             .duration(1000)
                             .playOn(personaje);
+                    mHandler.postDelayed(huidaexitosa, 1000);
                 }
                 else{
                     turnoEnemigo();
@@ -382,6 +367,7 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
                     YoYo.with(Techniques.FadeOutLeft)
                             .duration(1000)
                             .playOn(personaje);
+                    mHandler.postDelayed(huidaexitosa, 1000);
                 }
                 else{
                     turnoEnemigo();
@@ -400,6 +386,7 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
                     YoYo.with(Techniques.FadeOutLeft)
                             .duration(1000)
                             .playOn(personaje);
+                    mHandler.postDelayed(huidaexitosa, 1000);
                 }
                 else{
                     turnoEnemigo();
@@ -415,6 +402,7 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
                     YoYo.with(Techniques.FadeOutLeft)
                             .duration(1000)
                             .playOn(personaje);
+                    mHandler.postDelayed(huidaexitosa, 1000);
                 }
                 else{
                     turnoEnemigo();
@@ -430,12 +418,20 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
                     YoYo.with(Techniques.FadeOutLeft)
                             .duration(1000)
                             .playOn(personaje);
+                    mHandler.postDelayed(huidaexitosa, 1000);
                 } else {
                     turnoEnemigo();
                 }
             }
         }
     }
+
+    private Runnable huidaexitosa = new Runnable() {
+        @Override
+        public void run() {
+            volverPantalla();
+        }
+    };
 
 
     //Inventatio y sus animaciones
@@ -447,7 +443,12 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
             mHandler.postDelayed(AnimacionCura, 400);
             mHandler.postDelayed(AnimacionCura, 1000);
             mHandler.postDelayed(AnimacionCura, 1300);
-            Protagonista.setVida(Protagonista.getVida() - 20);
+            if (Protagonista.getVida() < 20){
+                int curarrestante = Protagonista.getVida();
+                Protagonista.setVida(Protagonista.getVida() - curarrestante);
+            }else {
+                Protagonista.setVida(Protagonista.getVida() - 35);
+            }
             vidarestante.setText(String.valueOf(Protagonista.getVidaMaxima()-Protagonista.getVida()+" / "+Protagonista.getVidaMaxima()));
             barravida.setProgress(Protagonista.getVidaMaxima()-Protagonista.getVida());
             turnoEnemigo();
@@ -465,28 +466,10 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
 
             if (tipodeEnemigo.equals(enemigosPosibles[0]) && jabali.getVida() <=0){
                 jabali.setVida(jabali.getVida() - Protagonista.getMagia()+20);
-
-                if (jabali.getVida() >0){
-                    turnoEnemigo();
-                }else {
-                    ganador();
-                }
             } else if (tipodeEnemigo.equals(enemigosPosibles[1]) && jabali.getVida() <=0){
                 cazador.setVida(cazador.getVida() - Protagonista.getMagia()+20);
-                ganador();
-                if (cazador.getVida() >0){
-                    turnoEnemigo();
-                }else {
-                    ganador();
-                }
             }else if (tipodeEnemigo.equals(enemigosPosibles[2]) && jabali.getVida() <=0){
                 bandido.setVida(bandido.getVida() - Protagonista.getMagia()+20);
-
-                if (bandido.getVida() >0){
-                    turnoEnemigo();
-                }else {
-                    ganador();
-                }
             }
 
         }
@@ -501,6 +484,24 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
             YoYo.with(Techniques.Wobble)
                     .duration(200)
                     .playOn(enemigo);
+
+            if (jabali.getVida() >0){
+                turnoEnemigo();
+            }else {
+                ganador();
+            }
+            if (cazador.getVida() >0){
+                turnoEnemigo();
+            }else {
+                ganador();
+                Log.d("ganador", "coño ya");
+            }
+            if (bandido.getVida() >0){
+                turnoEnemigo();
+            }else {
+                ganador();
+                Log.d("ganador", "coño ya");
+            }
         }
     };
 
@@ -665,7 +666,6 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
                     }
                 }
                 }
-
             barravida.setProgress(Protagonista.getVidaMaxima()-Protagonista.getVida());
             vidarestante.setText(String.valueOf(Protagonista.getVidaMaxima()-Protagonista.getVida()+" / "+Protagonista.getVidaMaxima()));
         }
@@ -712,13 +712,8 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
     }
 
     void derrota(){
-        if (tipodeEnemigo.equals(enemigosPosibles[0]) && jabali.getVida() <=0){
+
             new FinalCombate(context, 2,jabali.getDinero(),BatallasActivity.this);
-        } else if (tipodeEnemigo.equals(enemigosPosibles[1]) && jabali.getVida() <=0){
-            new FinalCombate(context, 2,cazador.getDinero(),BatallasActivity.this);
-        }else if (tipodeEnemigo.equals(enemigosPosibles[2]) && jabali.getVida() <=0){
-            new FinalCombate(context, 2,bandido.getDinero(),BatallasActivity.this);
-        }
     }
 
     @Override

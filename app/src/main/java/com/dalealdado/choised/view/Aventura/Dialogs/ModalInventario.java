@@ -108,8 +108,6 @@ public class ModalInventario {
             case 1:
                 imageView.setImageResource(R.drawable.potion);
                 break;
-            case 2:
-                break;
             case 3:
                 imageView.setImageResource(R.drawable.librog);
                 break;

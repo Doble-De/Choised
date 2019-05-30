@@ -3,7 +3,7 @@ package com.dalealdado.choised.model;
 public class Cazador {
 
     int vida = 160;
-    int fuerza = 30;
+    int fuerza = 17;
     int agilidad= 60;
     int dinero=30;
 

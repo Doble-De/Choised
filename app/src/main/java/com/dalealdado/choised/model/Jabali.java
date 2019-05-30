@@ -3,9 +3,9 @@ package com.dalealdado.choised.model;
 public class Jabali {
 
     int vida = 60;
-    int fuerza = 20;
+    int fuerza = 10;
     int agilidad= 10;
-    int dinero=1;
+    int dinero=2;
     String nombre="Jabalí";
 
     public void setVida(int vida) {

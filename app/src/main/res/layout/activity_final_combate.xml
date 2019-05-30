@@ -54,7 +54,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:text="Pulsa para continuar..."
-        android:textSize="30sp"
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/carne" />

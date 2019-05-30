@@ -16,7 +16,7 @@ import com.dalealdado.dalealdado.R;
 
 import java.util.Random;
 
-public class Bosque1 extends AppCompatActivity {
+public class Bosque1 extends AppCompatActivity implements Bosque1Dialog.pelea {
 
     Context context;
     ImageButton bAbajo,bIzquierda,bDerecha;
@@ -62,11 +62,10 @@ public class Bosque1 extends AppCompatActivity {
             }
         });
 
-        jabali = random.nextInt(1);
-        System.out.println(jabali);
+        jabali = random.nextInt(4);
 
         if (Protagonista.getCarne() != 5) {
-            if (jabali != 0) {
+            if (jabali != 3) {
                 huellas.setImageResource(R.drawable.transparente);
             } else {
                 huellas.setImageResource(R.drawable.pisadasjabali);
@@ -74,15 +73,17 @@ public class Bosque1 extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         batallas.putExtra("tipo", "Jabali");
-                        batallas.putExtra("activity", "bosque1");
+                        batallas.putExtra("activity", "Bosque1");
                         startActivity(batallas);
                     }
                 });
             }
         }
 
+
+
         if (Protagonista.getJabali()){
-            new Bosque1Dialog(context);
+            new Bosque1Dialog(context, Bosque1.this);
         }
 
         YoYo.with(Techniques.BounceInUp)
@@ -96,5 +97,14 @@ public class Bosque1 extends AppCompatActivity {
         YoYo.with(Techniques.BounceInRight)
                 .duration(2000)
                 .playOn(bDerecha);
+    }
+
+    @Override
+    public void lucha(int id) {
+        if (id == 0){
+            batallas.putExtra("tipo", "Cazador");
+            batallas.putExtra("activity", "Bosque1");
+            startActivity(batallas);
+        }
     }
 }

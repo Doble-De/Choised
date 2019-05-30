@@ -1,13 +1,17 @@
 package com.dalealdado.choised.view.Aventura;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.dalealdado.choised.model.Protagonista;
+import com.dalealdado.choised.view.Aventura.Dialogs.CarniceriaCompleted;
 import com.dalealdado.choised.view.Aventura.Dialogs.CarniceriaDialog;
+import com.dalealdado.choised.view.Aventura.Dialogs.CarniceriaNormal;
 import com.dalealdado.choised.view.Aventura.Dialogs.FuenteDialog;
 import com.dalealdado.dalealdado.R;
 
@@ -15,6 +19,8 @@ public class Mercado extends AppCompatActivity {
 
     ImageButton mIzquierda, mAbajo;
     Intent barrioMagia, entradaBosque;
+    Button hablar;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,13 +28,26 @@ public class Mercado extends AppCompatActivity {
         setContentView(R.layout.activity_mercado);
 
         mIzquierda = findViewById(R.id.izquierda9);
+        hablar = findViewById(R.id.hablar);
+        context = this;
 
 
         barrioMagia = new Intent(this, BarrioMagia.class);
 
-        if (Protagonista.getCarniceria()){
-            new CarniceriaDialog(this);
-        }
+        hablar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Protagonista.getCarniceria()){
+                    new CarniceriaDialog(context);
+                } else if (Protagonista.getCarne() == 6){
+                    new CarniceriaCompleted(context);
+                } else {
+                    new CarniceriaNormal(context);
+                }
+            }
+        });
+
+
 
 
         mIzquierda.setOnClickListener(new View.OnClickListener() {

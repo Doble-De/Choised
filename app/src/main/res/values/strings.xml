@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DalealDado</string>
+    <string name="app_name">Choised</string>
     <string name="title_activity_personajes">Personajes</string>
     <string name="tab_text_1">Heroes</string>
     <string name="tab_text_2">Enemigos</string>

@@ -25,6 +25,7 @@ public class HeroesShowActivity extends AppCompatActivity {
         setContentView(R.layout.activity_heroes_show);
         modif = findViewById(R.id.modificar);
         borrar = findViewById(R.id.eliminar);
+        id = getIntent().getIntExtra("heroeid",0);
 
         final TextView tvhNombre = findViewById(R.id.etnombre);
         final TextView tvhRaza = findViewById(R.id.etraza);
@@ -54,6 +55,7 @@ public class HeroesShowActivity extends AppCompatActivity {
                 tvhMagia.setText(heroe.magia);
                 tvhinventario.setText(heroe.inventario);
                 tvhHabilidades.setText(heroe.habilidades);
+                id = heroe.id;
             }
         });
 

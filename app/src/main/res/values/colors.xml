@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#67AB9F</color>
+    <color name="colorPrimary">#4228d1</color>
     <color name="colorPrimaryDark">#568F84</color>
     <color name="colorAccent">#D81B31</color>
     <color name="colorLetrasMadera">#281609</color>
@@ -14,7 +14,7 @@
     <color name="infoescenario">#930b0935</color>
     <color name="infoenemigos">#bd38090a</color>
     <color name="infoeheroes">#c216437e</color>
-    <color name="transparente">#00ffffff</color>
+    <color name="transparente">#00FFFFFF</color>
     <color name="rojoflojo">#FF9999</color>
     <color name="azulflojo">#99C2FF</color>
     <color name="textofondo">#96654D</color>

@@ -2,7 +2,7 @@ package com.dalealdado.choised.model;
 
 public class Protagonista {
 
-    static int imagen, vida=0, fuerza, agilidad, defensa, magia, dinero, carne, vidaMaxima;
+    static int imagen, vida=0, fuerza, agilidad, defensa, magia, dinero, carne=5, vidaMaxima;
     static String nombre;
     static Boolean inicio = true, carniceria = true, jabali= false, aviso=false, carta=false, bandido=true, pagado=false;
     static int[] inventario = new int[6];

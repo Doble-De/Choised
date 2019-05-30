@@ -16,7 +16,7 @@ import java.util.Random;
 public class Bosque4 extends AppCompatActivity {
 
     ImageButton bAbajo,bIzquierda,bDerecha;
-    Intent bosque1,bosque5;
+    Intent bosque1,bosque5,batallas;
     int jabali;
     Random random = new Random();
 
@@ -32,6 +32,7 @@ public class Bosque4 extends AppCompatActivity {
 
         bosque1 = new Intent( this, Bosque1.class);
         bosque5 = new Intent( this, Bosque5.class);
+        batallas = new Intent(Bosque4.this, BatallasActivity.class);
 
         bAbajo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,10 +51,18 @@ public class Bosque4 extends AppCompatActivity {
         jabali = random.nextInt(4);
         System.out.println(jabali);
 
-        if (jabali != 3){
+        if (jabali != 3) {
             huellas.setImageResource(R.drawable.transparente);
         } else {
             huellas.setImageResource(R.drawable.pisadasjabali);
+            huellas.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    batallas.putExtra("tipo", "Jabali");
+                    batallas.putExtra("activity", "Bosque4");
+                    startActivity(batallas);
+                }
+            });
         }
 
         YoYo.with(Techniques.BounceInDown)

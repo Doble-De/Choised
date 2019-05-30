@@ -452,7 +452,7 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
             vidarestante.setText(String.valueOf(Protagonista.getVidaMaxima()-Protagonista.getVida()+" / "+Protagonista.getVidaMaxima()));
             barravida.setProgress(Protagonista.getVidaMaxima()-Protagonista.getVida());
             turnoEnemigo();
-        } else if (id == 3) {
+        } else if (id == 2) {
             corte = (ImageView) findViewById(R.id.animataque);
             fire.start();
             corte.setImageResource(R.drawable.fuego);
@@ -490,6 +490,7 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
             }else {
                 ganador();
             }
+            //Aqui hay un error a la hora de utilizar el tomo en batalla o al acabar la batalla o porque hay una condicion k no se cumple nunca.
             if (cazador.getVida() >0){
                 turnoEnemigo();
             }else {

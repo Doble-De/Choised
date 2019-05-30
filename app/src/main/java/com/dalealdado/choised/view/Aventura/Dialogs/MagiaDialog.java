@@ -49,6 +49,14 @@ public class MagiaDialog {
 
         dinero.setText(Protagonista.getDinero()+ "");
 
+        if (!Protagonista.getEmblema()){
+            text1_2.setText("VENDIDO");
+            text1_2.setTextColor(R.drawable.castillo);
+            text2_2.setText("");
+            text3_2.setText("");
+            emblema.setBackgroundColor(R.drawable.castillo);
+        }
+
         poti.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ResourceAsColor")
             @Override
@@ -86,27 +94,31 @@ public class MagiaDialog {
             }
         });
 
-        emblema.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("ResourceAsColor")
-            @Override
-            public void onClick(View v) {
-                if (Protagonista.getDinero() >= 5) {
-                    text1_2.setText("VENDIDO");
-                    text1_2.setTextColor(R.color.azulflojo);
-                    text2_2.setText("");
-                    text3_2.setText("");
-                    emblema.setBackgroundColor(R.color.botonescenario);
-                    restDinero = Protagonista.getDinero() - 5;
-                    Protagonista.setDinero(restDinero);
-                    dinero.setText(Protagonista.getDinero()+ "");
-                    Protagonista.añadirInventario(3);
+        if (Protagonista.getEmblema()){
+            emblema.setOnClickListener(new View.OnClickListener() {
+                @SuppressLint("ResourceAsColor")
+                @Override
+                public void onClick(View v) {
+                    if (Protagonista.getDinero() >= 5) {
+                        text1_2.setText("VENDIDO");
+                        text1_2.setTextColor(R.color.azulflojo);
+                        text2_2.setText("");
+                        text3_2.setText("");
+                        emblema.setBackgroundColor(R.color.botonescenario);
+                        restDinero = Protagonista.getDinero() - 5;
+                        Protagonista.setDinero(restDinero);
+                        dinero.setText(Protagonista.getDinero()+ "");
+                        Protagonista.añadirInventario(3);
+                        Protagonista.setEmblema(false);
+                    }
+                    else {
+                        Toast.makeText(context, "No tienes suficiente dinero para comprar ese objeto.",Toast.LENGTH_SHORT);
+                        //System.out.println("No tienes suficiente dinero");
+                    }
                 }
-                else {
-                    Toast.makeText(context, "No tienes suficiente dinero para comprar ese objeto.",Toast.LENGTH_SHORT);
-                    //System.out.println("No tienes suficiente dinero");
-                }
-            }
-        });
+            });
+        }
+
 
         salir.setOnClickListener(new View.OnClickListener() {
             @Override

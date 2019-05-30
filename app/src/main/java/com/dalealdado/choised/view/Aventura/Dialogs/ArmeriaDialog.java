@@ -45,48 +45,71 @@ public class ArmeriaDialog {
 
         dinero.setText(Protagonista.getDinero()+ "");
 
-        espada.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("ResourceAsColor")
-            @Override
-            public void onClick(View v) {
-                if (Protagonista.getDinero() >= 15) {
-                    System.out.println(Protagonista.getDinero());
-                    text1.setText("VENDIDO");
-                    text1.setTextColor(R.color.azulflojo);
-                    text2.setText("");
-                    text3.setText("");
-                    espada.setBackgroundColor(R.color.colorAccent);
-                    restDinero = Protagonista.getDinero() - 15;
-                    Protagonista.setDinero(restDinero);
-                    dinero.setText(Protagonista.getDinero()+ "");
-                }
-                else {
-                    Toast.makeText(context, "No tienes suficiente dinero para comprar ese objeto.",Toast.LENGTH_SHORT);
-                    System.out.println("No tienes suficiente dinero");
-                }
-            }
-        });
+        if (!Protagonista.getEspada()){
+            text1.setText("VENDIDO");
+            text1.setTextColor(R.drawable.castillo);
+            text2.setText("");
+            text3.setText("");
+            espada.setBackgroundColor(R.drawable.castillo);
+        }
+        else if (!Protagonista.getEscudo()){
+            text1_2.setText("VENDIDO");
+            text1_2.setTextColor(R.drawable.castillo);
+            text2_2.setText("");
+            text3_2.setText("");
+            escudo.setBackgroundColor(R.drawable.castillo);
+        }
 
-        escudo.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("ResourceAsColor")
-            @Override
-            public void onClick(View v) {
-                if (Protagonista.getDinero() >= 10) {
-                    text1_2.setText("VENDIDO");
-                    text1_2.setTextColor(R.color.azulflojo);
-                    text2_2.setText("");
-                    text3_2.setText("");
-                    escudo.setBackgroundColor(R.color.botonescenario);
-                    restDinero = Protagonista.getDinero() - 10;
-                    Protagonista.setDinero(restDinero);
-                    dinero.setText(Protagonista.getDinero()+ "");
+        if (Protagonista.getEspada()) {
+            espada.setOnClickListener(new View.OnClickListener() {
+                @SuppressLint("ResourceAsColor")
+                @Override
+                public void onClick(View v) {
+                    if (Protagonista.getEspada()) {
+                        if (Protagonista.getDinero() >= 15) {
+                            System.out.println(Protagonista.getDinero());
+                            text1.setText("VENDIDO");
+                            text1.setTextColor(R.color.azulflojo);
+                            text2.setText("");
+                            text3.setText("");
+                            espada.setBackgroundColor(R.color.colorAccent);
+                            restDinero = Protagonista.getDinero() - 15;
+                            Protagonista.setDinero(restDinero);
+                            dinero.setText(Protagonista.getDinero() + "");
+                            Protagonista.setEspada(false);
+                        } else {
+                            Toast.makeText(context, "No tienes suficiente dinero para comprar ese objeto.", Toast.LENGTH_SHORT);
+                            System.out.println("No tienes suficiente dinero");
+                        }
+                    }
                 }
-                else {
-                    Toast.makeText(context, "No tienes suficiente dinero para comprar ese objeto.",Toast.LENGTH_SHORT);
-                    System.out.println("No tienes suficiente dinero");
+            });
+        }
+
+        if (Protagonista.getEscudo()) {
+            escudo.setOnClickListener(new View.OnClickListener() {
+                @SuppressLint("ResourceAsColor")
+                @Override
+                public void onClick(View v) {
+                    if (Protagonista.getEscudo()) {
+                        if (Protagonista.getDinero() >= 10) {
+                            text1_2.setText("VENDIDO");
+                            text1_2.setTextColor(R.color.azulflojo);
+                            text2_2.setText("");
+                            text3_2.setText("");
+                            escudo.setBackgroundColor(R.color.botonescenario);
+                            restDinero = Protagonista.getDinero() - 10;
+                            Protagonista.setDinero(restDinero);
+                            dinero.setText(Protagonista.getDinero() + "");
+                            Protagonista.setEscudo(false);
+                        } else {
+                            Toast.makeText(context, "No tienes suficiente dinero para comprar ese objeto.", Toast.LENGTH_SHORT);
+                            System.out.println("No tienes suficiente dinero");
+                        }
+                    }
                 }
-            }
-        });
+            });
+        }
 
         salir.setOnClickListener(new View.OnClickListener() {
             @Override

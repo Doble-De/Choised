@@ -4,12 +4,36 @@ public class Protagonista {
 
     static int imagen, vida=0, fuerza, agilidad, defensa, magia, dinero, carne=0, vidaMaxima;
     static String nombre;
-    static Boolean inicio = true, carniceria = true, jabali= false, aviso=false, carta=false, bandido=true, pagado=false;
+    static Boolean inicio = true, carniceria = true, jabali= false, aviso=false, carta=false, bandido=true, pagado=false, espada=true, escudo=true, emblema=true;
     static int[] inventario = new int[9];
     static int[] cantidad = new int[9];
 
     public static int getVidaMaxima() {
         return vidaMaxima;
+    }
+
+    public static Boolean getEspada() {
+        return espada;
+    }
+
+    public static Boolean getEscudo() {
+        return escudo;
+    }
+
+    public static Boolean getEmblema() {
+        return emblema;
+    }
+
+    public static void setEspada(Boolean espada) {
+        Protagonista.espada = espada;
+    }
+
+    public static void setEscudo(Boolean escudo) {
+        Protagonista.escudo = escudo;
+    }
+
+    public static void setEmblema(Boolean emblema) {
+        Protagonista.emblema = emblema;
     }
 
     public static Boolean getInicio() {
@@ -169,11 +193,11 @@ public class Protagonista {
                 cantidad[i] --;
                 if (cantidad[i] == 0){
                     inventario[i] = 0;
+                    acualizarInventario();
                 }
                 break;
             }
         }
-        acualizarInventario();
     }
 
     public static void acualizarInventario(){
@@ -181,6 +205,7 @@ public class Protagonista {
             if ( i+1 != inventario.length){
                 if (inventario[i] == 0 && inventario[i+1] != 0){
                     inventario[i] = inventario[i+1];
+                    inventario[i+1] = 0;
                 }
             }
 

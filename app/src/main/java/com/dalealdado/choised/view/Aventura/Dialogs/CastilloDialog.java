@@ -49,6 +49,7 @@ public class CastilloDialog {
 
         name.setText("");
         if (!Protagonista.getAviso()){
+            turnonpc();
             texto.setText(historia[0]);
         } else{
             texto.setText(aviso[0]);
@@ -220,21 +221,17 @@ public class CastilloDialog {
         switch (cont){
             case 1:
                 texto.setText(historia[cont]);
-                turnonpc();
+                turnoprota();
                 break;
             case 2:
                 texto.setText(historia[cont]);
-                turnoprota();
+                turnonpc();
                 break;
             case 3:
                 texto.setText(historia[cont]);
-                turnonpc();
-                break;
-            case 4:
-                texto.setText(historia[cont]);
                 turnoprota();
                 break;
-            case 5:
+            case 4:
                 texto.setText(historia[cont]);
                 break;
         }

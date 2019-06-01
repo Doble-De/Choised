@@ -82,7 +82,7 @@ public class Bosque1 extends AppCompatActivity implements Bosque1Dialog.pelea {
 
 
 
-        if (Protagonista.getJabali()){
+        if (Protagonista.getJabali() && !Protagonista.getBandido()){
             new Bosque1Dialog(context, Bosque1.this);
         }
 

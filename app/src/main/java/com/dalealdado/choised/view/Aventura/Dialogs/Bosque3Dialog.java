@@ -4,8 +4,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -17,24 +15,24 @@ import com.daimajia.androidanimations.library.YoYo;
 import com.dalealdado.choised.model.Protagonista;
 import com.dalealdado.dalealdado.R;
 
-public class Bosque1Dialog {
-
+public class Bosque3Dialog {
     TextView name, texto;
     ImageView pj, npc, next;
     Button opcion1, opcion2;
-    int cont = 1, cont2 = 1;
-    boolean pagar = false, pelear= false;
-    String[] historia = {"Vaya vaya...", "Parece que hay un intruso en mi bosque","¿Ehh? ¿Como que tu bosque?", "Como lo oyes, he vivido en este bosque toda mi vida","por lo tanto es mi bosque","Vaya logica...","He visto que has estado cazando jabalies","Si, para el carnicero de la ciudad","No me importa, o me pagas 20 de oro de comision...","O lo vas a pasar mal","¿¡QUE!?"};
-    String[] dinero = {"Bueno, toma...","HAS PERDIDO 20 DE ORO","JAJAJAJAJAJAJA","Asi me gusta","gente que sepa lo que es de lo demas.","Quedate por aqui el tiempo que quieras", "ahora eres mi invitado","Ehh... Gracias supongo","Venga que vaya bien"};
-    String[] pelea = {"No te voy a dar nada", "Te vas a arrepentir", "Ya veremos..."};
+    int cont = 1, cont2 = 0, cont3=0;
+    boolean irse = false, pelear= false;
+    String[] historia = {"Voy a investigar un poco...", "*se enuentra al hombre en su cara*", "¡AHHHHHHH!","Que tenemos aqui, ¿fisgoneando no?"};
+    String[] huir = {"No no, perdon, ¿a la ciudad no se va por aqui?","...","...","...","Ehh... ¿Hola?","¡FUERA DE MI VISTA!", "¡Si señor, adios!"};
+    String[] pelea = {"No voy a permitir que mateis al rey", "Así que lo has oido...", "pues no te voy a poder dejar con vida."};
+    String[] ayuda = {"Alto ahi", "¿Otra molestia?", "Este es mi bosque","y no voy a permitir que amenazes a mi invitado","JAJAJAJAJAJA", "¿Y que vas a hacer?", "Ahora lo veras...", "*el cazador y el bandido se alejarian peleandose*","...", "Es mi oportunidad de entar en la cueva"};
 
 
     public interface pelea{
         void lucha(int id);
     }
-    private pelea interfaz;
+    private Bosque3Dialog.pelea interfaz;
 
-    public Bosque1Dialog(final Context context, pelea actividad) {
+    public Bosque3Dialog(final Context context, pelea actividad) {
 
         interfaz=actividad;
         final Dialog dialog = new Dialog(context);
@@ -52,32 +50,13 @@ public class Bosque1Dialog {
         opcion2 = dialog.findViewById(R.id.opcion2);
         Protagonista.setBandido(true);
 
-        turnonpc();
+        turnoprota();
         texto.setText(historia[0]);
 
 
+
+
         opcion1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                YoYo.with(Techniques.ZoomOut)
-                        .duration(1000)
-                        .playOn(opcion1);
-                YoYo.with(Techniques.ZoomOut)
-                        .duration(500)
-                        .playOn(opcion1);
-                opcion1.setVisibility(View.INVISIBLE);
-                opcion2.setVisibility(View.INVISIBLE);
-                next.setVisibility(View.VISIBLE);
-
-                pagar = true;
-                cont = 0;
-                texto.setText(dinero[0]);
-                Protagonista.setDinero(Protagonista.getDinero()-20);
-                Protagonista.setPagado(true);
-            }
-        });
-
-        opcion2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 YoYo.with(Techniques.ZoomOut)
@@ -93,11 +72,29 @@ public class Bosque1Dialog {
                 turnoprota();
                 pelear = true;
                 cont = 0;
-                texto.setText(pelea[0]);
-                Protagonista.setJabali(false);
+                texto.setText(pelea[cont2]);
+                Protagonista.setBandidoout(true);
             }
         });
 
+        opcion2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                YoYo.with(Techniques.ZoomOut)
+                        .duration(1000)
+                        .playOn(opcion1);
+                YoYo.with(Techniques.ZoomOut)
+                        .duration(500)
+                        .playOn(opcion1);
+                opcion1.setVisibility(View.INVISIBLE);
+                opcion2.setVisibility(View.INVISIBLE);
+                next.setVisibility(View.VISIBLE);
+
+                irse = true;
+                cont = 0;
+                texto.setText(huir[cont2]);
+            }
+        });
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,11 +103,8 @@ public class Bosque1Dialog {
                 if (cont == historia.length) {
                     turnoprota();
                     texto.setText("");
-                    if (Protagonista.getDinero() < 20){
-                        opcion1.setEnabled(false);
-                    }
-                    opcion1.setText("Darle el Dinero");
-                    opcion2.setText("No le voy a dar nada");
+                    opcion1.setText("¡Plantarle Cara!");
+                    opcion2.setText("Disculpe las molestias");
                     opcion1.setVisibility(View.VISIBLE);
                     opcion2.setVisibility(View.VISIBLE);
                     next.setVisibility(View.INVISIBLE);
@@ -120,21 +114,31 @@ public class Bosque1Dialog {
                     YoYo.with(Techniques.ZoomIn)
                             .duration(1200)
                             .playOn(opcion2);
-                } else if (pagar) {
+                } else if (irse) {
                     cont2++;
-                    if (cont2 == dinero.length) {
-                        interfaz.lucha(1);
+                    if (cont2 == huir.length) {
                         dialog.dismiss();
                     } else {
-                        rutaDinero();
+                        rutaHuida();
                     }
                 } else if (pelear) {
                     cont2++;
-                    if (cont2 == pelea.length) {
-                        interfaz.lucha(0);
-                        dialog.dismiss();
+                    if (cont2 >= pelea.length) {
+                        if (Protagonista.getPagado()){
+                            if (cont3 == ayuda.length){
+                                dialog.dismiss();
+                            }else {
+                                rutaCazador();
+                                cont3++;
+                            }
+
+                        }else {
+                            interfaz.lucha(0);
+                            dialog.dismiss();
+                        }
+
                     } else {
-                        rutaGo();
+                        rutaPelea();
                     }
                 } else {
                     ponerTexto();
@@ -153,83 +157,23 @@ public class Bosque1Dialog {
         switch (cont) {
             case 1:
                 texto.setText(historia[cont]);
-                break;
-            case 2:
-                texto.setText(historia[cont]);
-                turnoprota();
-                break;
-            case 3:
-                texto.setText(historia[cont]);
-                turnonpc();
-                break;
-            case 4:
-                texto.setText(historia[cont]);
-                break;
-            case 5:
-                texto.setText(historia[cont]);
-                turnoprota();
-                break;
-            case 6:
-                texto.setText(historia[cont]);
-                turnonpc();
-                break;
-            case 7:
-                texto.setText(historia[cont]);
-                turnoprota();
-                break;
-            case 8:
-                texto.setText(historia[cont]);
-                turnonpc();
-                break;
-            case 9:
-                texto.setText(historia[cont]);
-                break;
-            case 10:
-                texto.setText(historia[cont]);
-                turnoprota();
-                break;
-        }
-    }
-
-    public void rutaDinero() {
-
-        switch (cont2) {
-            case 1:
-                texto.setText(dinero[cont2]);
                 pj.setImageResource(R.color.transparente);
                 npc.setImageResource(R.color.transparente);
                 name.setText("");
                 break;
             case 2:
-                texto.setText(dinero[cont2]);
-                turnonpc();
-                break;
-            case 3:
-                texto.setText(dinero[cont2]);
-                break;
-            case 4:
-                texto.setText(dinero[cont2]);
-                break;
-            case 5:
-                texto.setText(dinero[cont2]);
-                break;
-            case 6:
-                texto.setText(dinero[cont2]);
-                break;
-            case 7:
-                texto.setText(dinero[cont2]);
+                texto.setText(historia[cont]);
                 turnoprota();
                 break;
-            case 8:
-                texto.setText(dinero[cont2]);
+            case 3:
+                texto.setText(historia[cont]);
                 turnonpc();
                 break;
-
         }
-
     }
 
-    public void rutaGo() {
+    public void rutaPelea() {
+
         switch (cont2) {
             case 1:
                 texto.setText(pelea[cont2]);
@@ -237,8 +181,85 @@ public class Bosque1Dialog {
                 break;
             case 2:
                 texto.setText(pelea[cont2]);
+                break;
+
+        }
+
+    }
+
+    public void rutaHuida() {
+        switch (cont2) {
+            case 1:
+                texto.setText(huir[cont2]);
+                turnonpc();
+                break;
+            case 2:
+                texto.setText(huir[cont2]);
                 turnoprota();
                 break;
+            case 3:
+                texto.setText(huir[cont2]);
+                turnonpc();
+                break;
+            case 4:
+                texto.setText(huir[cont2]);
+                turnoprota();
+                break;
+            case 5:
+                texto.setText(huir[cont2]);
+                turnonpc();
+                break;
+            case 6:
+                texto.setText(huir[cont2]);
+                turnoprota();
+                break;
+
+        }
+    }
+
+    public void rutaCazador(){
+        switch (cont3) {
+            case 0:
+                texto.setText(ayuda[cont3]);
+                turnonpc2();
+                break;
+            case 1:
+                texto.setText(ayuda[cont3]);
+                turnonpc();
+                break;
+            case 2:
+                texto.setText(ayuda[cont3]);
+                turnonpc2();
+                break;
+            case 3:
+                texto.setText(ayuda[cont3]);
+                break;
+            case 4:
+                texto.setText(ayuda[cont3]);
+                turnonpc();
+                break;
+            case 5:
+                texto.setText(ayuda[cont3]);
+                break;
+            case 6:
+                texto.setText(ayuda[cont3]);
+                turnonpc2();
+                break;
+            case 7:
+                texto.setText(ayuda[cont3]);
+                pj.setImageResource(R.color.transparente);
+                npc.setImageResource(R.color.transparente);
+                name.setText("");
+                break;
+            case 8:
+                texto.setText(ayuda[cont3]);
+                turnoprota();
+                break;
+            case 9:
+                texto.setText(ayuda[cont3]);
+                break;
+
+
         }
     }
 
@@ -279,7 +300,13 @@ public class Bosque1Dialog {
 
     void turnonpc() {
         pj.setImageResource(R.color.transparente);
-        npc.setImageResource(R.drawable.cazador);
+        npc.setImageResource(R.drawable.bandido);
+        name.setText("Bandido");
+    }
+
+    void turnonpc2() {
+        pj.setImageResource(R.drawable.cazador2);
+        npc.setImageResource(R.color.transparente);
         name.setText("Cazador");
     }
 }

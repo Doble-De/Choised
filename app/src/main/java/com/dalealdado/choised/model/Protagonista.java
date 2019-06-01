@@ -2,9 +2,9 @@ package com.dalealdado.choised.model;
 
 public class Protagonista {
 
-    static int imagen, vida=0, fuerza, agilidad, defensa, magia, dinero, carne=0, vidaMaxima;
+    static int imagen, vida=0, fuerza, agilidad, defensa, magia, dinero, carne=5, vidaMaxima;
     static String nombre;
-    static Boolean inicio = true, carniceria = true, jabali= false, aviso=false, carta=false, bandido=true, pagado=false, espada=true, escudo=true, emblema=true;
+    static Boolean inicio = true, carniceria = true, jabali= false, aviso=false, carta=false, bandido=false, bandidoout=false, pagado=false, espada=true, escudo=true, emblema=true;
     static int[] inventario = new int[9];
     static int[] cantidad = new int[9];
 
@@ -14,6 +14,14 @@ public class Protagonista {
 
     public static Boolean getEspada() {
         return espada;
+    }
+
+    public static Boolean getBandidoout() {
+        return bandidoout;
+    }
+
+    public static void setBandidoout(Boolean bandidoout) {
+        Protagonista.bandidoout = bandidoout;
     }
 
     public static Boolean getEscudo() {

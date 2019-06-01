@@ -39,7 +39,7 @@ public class Mercado extends AppCompatActivity {
             public void onClick(View v) {
                 if (Protagonista.getCarniceria()){
                     new CarniceriaDialog(context);
-                } else if (Protagonista.getCarne() == 6){
+                } else if (Protagonista.getCarne() >= 6){
                     new CarniceriaCompleted(context);
                 } else {
                     new CarniceriaNormal(context);

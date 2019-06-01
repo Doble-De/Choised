@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.dalealdado.choised.model.Protagonista;
 import com.dalealdado.choised.shake.ShakeDetector;
 import com.dalealdado.dalealdado.R;
 
@@ -127,7 +128,11 @@ public class ModalDado {
                         int count = 0;
 
                         public void run() {
-                            valor20.postValue(r.nextInt(20) + 1);
+                            if (!Protagonista.getEspada() && tipo.equals("ataque") || !Protagonista.getEscudo() && tipo.equals("defensa")){
+                                valor20.postValue(r.nextInt(20) + 3);
+                            }else {
+                                valor20.postValue(r.nextInt(20) + 1);
+                            }
                             if (count < 6) {
                                 handler.postDelayed(this, delay);
                                 count++;

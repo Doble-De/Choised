@@ -41,7 +41,7 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
     Button ataque, defensa, huida, objetos;
     String accion, tipodeEnemigo, activityAntigua;
     String [] enemigosPosibles = {"Jabali", "Cazador", "Bandido"};
-    String [] activitysPosibles ={"Bosque1", "Bosque2", "Bosque4", "Bosque5", "Bosque6"};
+    String [] activitysPosibles ={"Bosque1", "Bosque2","Bosque3", "Bosque4", "Bosque5", "Bosque6"};
     MediaPlayer mp, mp2, mp3, mp4, heal, fire, firehit;
     int contador = 1;
     Random random = new Random();
@@ -485,23 +485,29 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
                     .duration(200)
                     .playOn(enemigo);
 
-            if (jabali.getVida() >0){
-                turnoEnemigo();
-            }else {
-                ganador();
-            }
-            //Aqui hay un error a la hora de utilizar el tomo en batalla o al acabar la batalla o porque hay una condicion k no se cumple nunca.
-            if (cazador.getVida() >0){
-                turnoEnemigo();
-            }else {
-                ganador();
-                Log.d("ganador", "coño ya");
-            }
-            if (bandido.getVida() >0){
-                turnoEnemigo();
-            }else {
-                ganador();
-                Log.d("ganador", "coño ya");
+
+            if (tipodeEnemigo.equals(enemigosPosibles[0])) {
+                if (jabali.getVida() > 0){
+                    turnoEnemigo();
+                }else {
+                    ganador();
+                    Protagonista.setCarne(Protagonista.getCarne()+1);
+                    if(Protagonista.getCarne() == 6){
+                        Protagonista.setJabali(true);
+                    }
+                }
+            } else if (tipodeEnemigo.equals(enemigosPosibles[1])){
+                if (cazador.getVida() > 0){
+                    turnoEnemigo();
+                }else {
+                    ganador();
+                }
+            } else if (tipodeEnemigo.equals(enemigosPosibles[2])){
+                if (bandido.getVida() > 0){
+                    turnoEnemigo();
+                }else {
+                    ganador();
+                }
             }
         }
     };
@@ -573,7 +579,7 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
     private Runnable tiradaEnemigo = new Runnable() {
         @Override
         public void run() {
-            tirada = random.nextInt(20 + 1);
+            tirada = random.nextInt(20)+ 1;
             resultadoe.setText(String.valueOf(tirada));
             YoYo.with(Techniques.ZoomInUp)
                     .duration(400)
@@ -621,12 +627,12 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
                     if (Protagonista.getVida() >= Protagonista.getVidaMaxima()){
                             derrota();
                     }
-                } else if (tirada > 6 && tirada <=17){
+                } else if (tirada <= 17){
                     Protagonista.setVida(Protagonista.getVida() + jabali.getFuerza());
                     if (Protagonista.getVida() >= Protagonista.getVidaMaxima()){
                         derrota();
                     }
-                } else if (tirada > 17){
+                } else {
                     Protagonista.setVida(Protagonista.getVida() + jabali.getFuerza()*2);
                     if (Protagonista.getVida() >= Protagonista.getVidaMaxima()){
                         derrota();
@@ -638,13 +644,13 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
                     if (Protagonista.getVida() >= Protagonista.getVidaMaxima()){
                         derrota();
                     }
-                } else if (tirada > 6 && tirada <=17){
+                } else if (tirada <= 17){
                     Protagonista.setVida(Protagonista.getVida() + cazador.getFuerza());
                     if (Protagonista.getVida() >= Protagonista.getVidaMaxima()){
                         derrota();
                     }
-                } else if (tirada > 17){
-                    Protagonista.setVida(Protagonista.getVida() + bandido.getFuerza()*2);
+                } else {
+                    Protagonista.setVida(Protagonista.getVida() + cazador.getFuerza()*2);
                     if (Protagonista.getVida() >= Protagonista.getVidaMaxima()){
                         derrota();
                     }
@@ -655,13 +661,13 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
                     if (Protagonista.getVida() >= Protagonista.getVidaMaxima()){
                         derrota();
                     }
-                } else if (tirada > 6 && tirada <=17){
-                    Protagonista.setVida(Protagonista.getVida() + jabali.getFuerza());
+                } else if (tirada <= 17){
+                    Protagonista.setVida(Protagonista.getVida() + bandido.getFuerza());
                     if (Protagonista.getVida() >= Protagonista.getVidaMaxima()){
                         derrota();
                     }
-                } else if (tirada > 17){
-                    Protagonista.setVida(Protagonista.getVida() + jabali.getFuerza()*2);
+                } else {
+                    Protagonista.setVida(Protagonista.getVida() + bandido.getFuerza()*2);
                     if (Protagonista.getVida() >= Protagonista.getVidaMaxima()){
                         derrota();
                     }
@@ -705,16 +711,16 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
 
         if (tipodeEnemigo.equals(enemigosPosibles[0]) && jabali.getVida() <=0){
             new FinalCombate(context, 0,jabali.getDinero(),BatallasActivity.this);
-        } else if (tipodeEnemigo.equals(enemigosPosibles[1]) && jabali.getVida() <=0){
+        } else if (tipodeEnemigo.equals(enemigosPosibles[1]) && cazador.getVida() <=0){
             new FinalCombate(context, 1,cazador.getDinero(),BatallasActivity.this);
-        }else if (tipodeEnemigo.equals(enemigosPosibles[2]) && jabali.getVida() <=0){
+        }else if (tipodeEnemigo.equals(enemigosPosibles[2]) && bandido.getVida() <=0){
             new FinalCombate(context, 1,bandido.getDinero(),BatallasActivity.this);
         }
     }
 
     void derrota(){
 
-            new FinalCombate(context, 2,jabali.getDinero(),BatallasActivity.this);
+            new FinalCombate(context, 2,0,BatallasActivity.this);
     }
 
     @Override
@@ -732,10 +738,12 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
         } else if (activityAntigua.equals(activitysPosibles[1])){
             startActivity(new Intent(context, Bosque2.class));
         }else if (activityAntigua.equals(activitysPosibles[2])){
-            startActivity(new Intent(context, Bosque4.class));
+            startActivity(new Intent(context, Bosque3.class));
         }else if (activityAntigua.equals(activitysPosibles[3])){
-            startActivity(new Intent(context, Bosque5.class));
+            startActivity(new Intent(context, Bosque4.class));
         }else if (activityAntigua.equals(activitysPosibles[4])){
+            startActivity(new Intent(context, Bosque5.class));
+        }else if (activityAntigua.equals(activitysPosibles[5])){
             startActivity(new Intent(context, Bosque6.class));
         }
     }

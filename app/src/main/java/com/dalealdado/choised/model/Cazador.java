@@ -3,9 +3,9 @@ package com.dalealdado.choised.model;
 public class Cazador {
 
     int vida = 160;
-    int fuerza = 17;
-    int agilidad= 60;
-    int dinero=30;
+    int fuerza = 18;
+    int agilidad= 90;
+    int dinero=20;
 
     public void setVida(int vida) {
         this.vida = vida;

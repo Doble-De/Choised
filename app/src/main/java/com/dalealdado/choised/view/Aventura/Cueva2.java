@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.dalealdado.choised.model.Protagonista;
 import com.dalealdado.dalealdado.R;
 
 public class Cueva2 extends AppCompatActivity {
@@ -28,6 +29,10 @@ public class Cueva2 extends AppCompatActivity {
                 startActivity(cueva1);
             }
         });
+
+        if (!Protagonista.getEmblema()){
+
+        }
 
     }
 }

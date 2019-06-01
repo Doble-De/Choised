@@ -188,6 +188,7 @@ public class ProtagonistaActivity extends AppCompatActivity implements SelectPj.
                 if (puntos == 0){
                     Protagonista.setImagen(imagen);
                     Protagonista.setVidaMaxima(vida);
+                    Protagonista.setVida(0);
                     Protagonista.setFuerza(fuerza);
                     Protagonista.setDefensa(defensa);
                     Protagonista.setAgilidad(agilidad);
@@ -201,9 +202,11 @@ public class ProtagonistaActivity extends AppCompatActivity implements SelectPj.
                     Protagonista.setCarta(false);
                     Protagonista.setBandido(false);
                     Protagonista.setPagado(false);
+                    Protagonista.setBandidoout(false);
+                    Protagonista.setEspada(true);
+                    Protagonista.setEscudo(true);
+                    Protagonista.setEmblema(true);
 
-                    System.out.println();
-                    System.out.println("hola");
                     startActivity(inico);
                 } else {
                     Toast toast = Toast.makeText(context, "Tienes que repartir todos los puntos", Toast.LENGTH_SHORT);

@@ -23,8 +23,8 @@ public class CarniceriaCompleted {
     int cont = 0, cont2 = 0;
     boolean salir=false, nosalir = false;
     String [] historia= {"Bueno, ya tengo su carne", "¡Fantastico!", "Pues toma por la rapdez de doy algo más","HAS GANADO 20 de ORO", "¡Gracias! Me viene estupendo","Venga, si consigues 6 más no dudes en pasarte", "¡Vale Gracias!"};
-    String [] fin={"En realidad ya he cumplido la misión","si, supongo que me ire ya."};
-    String [] continuar={"Si, me quedare por aqui un rato más","¡Toca descansar un poco!"};
+    String [] fin={"En realidad ya he cumplido la misión","si, supongo que me ire ya.","¡Toca descansar un poco!"};
+    String [] continuar={"Si, me quedare por aqui un rato más","creo que hay cosas interesantes que hacer."};
     public CarniceriaCompleted(final Context context){
         final Dialog dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -85,9 +85,10 @@ public class CarniceriaCompleted {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                cont++;
 
                 if (cont == historia.length){
+                    Protagonista.setCarne(Protagonista.getCarne()-6);
                     turnoprota();
                     texto.setText("");
                     opcion1.setText("Ya he completado la Mision");
@@ -118,7 +119,6 @@ public class CarniceriaCompleted {
                         rutaNoFin();
                     }
                 }else {
-                    cont++;
                     ponerTexto();
                 }
 
@@ -130,20 +130,21 @@ public class CarniceriaCompleted {
     }
 
     public void ponerTexto(){
-
         switch (cont){
             case 1:
                 texto.setText(historia[cont]);
                 turnonpc();
-                Protagonista.setDinero(Protagonista.getDinero()+20);
                 break;
             case 2:
                 texto.setText(historia[cont]);
-                turnoprota();
+                turnonpc();
                 break;
             case 3:
                 texto.setText(historia[cont]);
-                turnonpc();
+                name.setText("");
+                pj.setImageResource(R.color.transparente);
+                npc.setImageResource(R.color.transparente);
+                Protagonista.setDinero(Protagonista.getDinero()+20);
                 break;
             case 4:
                 texto.setText(historia[cont]);
@@ -151,7 +152,7 @@ public class CarniceriaCompleted {
                 break;
             case 5:
                 texto.setText(historia[cont]);
-                turnoprota();
+                turnonpc();
                 break;
             case 6:
                 texto.setText(historia[cont]);
@@ -163,6 +164,10 @@ public class CarniceriaCompleted {
     void rutaFin() {
         switch (cont2){
             case 1:
+                texto.setText(fin[cont]);
+                break;
+
+            case 2:
                 texto.setText(fin[cont]);
                 break;
         }

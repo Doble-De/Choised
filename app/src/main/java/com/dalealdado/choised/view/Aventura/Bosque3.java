@@ -10,14 +10,16 @@ import android.widget.ImageButton;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.dalealdado.choised.model.Protagonista;
+import com.dalealdado.choised.view.Aventura.Dialogs.Bosque3Dialog;
+import com.dalealdado.choised.view.Aventura.Dialogs.Bosque3Proibido;
 import com.dalealdado.choised.view.Aventura.Dialogs.PreCuevaDialog;
 import com.dalealdado.dalealdado.R;
 
-public class Bosque3 extends AppCompatActivity {
+public class Bosque3 extends AppCompatActivity implements Bosque3Dialog.pelea {
 
     Context context;
     ImageButton bAbajo,bIzquierda,bDerecha;
-    Intent bosque2,cueva1,bosque6;
+    Intent bosque2,cueva1,bosque6, batallas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class Bosque3 extends AppCompatActivity {
         bosque2 = new Intent( this, Bosque2.class);
         bosque6 = new Intent( this, Bosque6.class);
         cueva1 = new Intent(this, Cueva1.class);
+        batallas = new Intent(Bosque3.this, BatallasActivity.class);
         context = this;
 
         bAbajo.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +53,13 @@ public class Bosque3 extends AppCompatActivity {
         bDerecha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(cueva1);
+                if (Protagonista.getBandido() && !Protagonista.getBandidoout()){
+                    new Bosque3Dialog(context,Bosque3.this);
+                }else if (!Protagonista.getBandido() && !Protagonista.getBandidoout()){
+                    new Bosque3Proibido(context);
+                } else {
+                    startActivity(cueva1);
+                }
             }
         });
 
@@ -71,5 +80,14 @@ public class Bosque3 extends AppCompatActivity {
         YoYo.with(Techniques.BounceInRight)
                 .duration(5000)
                 .playOn(bDerecha);
+    }
+
+    @Override
+    public void lucha(int id) {
+        if (id == 0){
+            batallas.putExtra("tipo", "Bandido");
+            batallas.putExtra("activity", "Bosque3");
+            startActivity(batallas);
+        }
     }
 }

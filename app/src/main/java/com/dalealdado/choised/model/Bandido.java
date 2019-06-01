@@ -2,8 +2,8 @@ package com.dalealdado.choised.model;
 
 public class Bandido {
 
-    int vida = 200;
-    int fuerza = 23;
+    int vida = 220;
+    int fuerza = 25;
     int agilidad= 30;
     int dinero=30;
     String nombre="Bandido";

@@ -50,12 +50,14 @@ public class FinalCombate extends AppCompatActivity {
             titulo.setText("¡HAS GANADO!");
             subtitulo.setText("Botin obtenido:");
             oro.setText("Oro: "+dinero);
+            Protagonista.setDinero(Protagonista.getDinero()+dinero);
             carne.setVisibility(View.VISIBLE);
             continuar.setText("PULSA PARA CONTINUAR LA AVENTURA");
         }else if (tipo == win){
             titulo.setText("¡HAS GANADO!");
             subtitulo.setText("Botin obtenido:");
             oro.setText("Oro: "+dinero);
+            Protagonista.setDinero(Protagonista.getDinero()+dinero);
             carne.setVisibility(View.INVISIBLE);
             continuar.setText("PULSA PARA CONTINUAR LA AVENTURA");
         }else if (tipo == derrota){

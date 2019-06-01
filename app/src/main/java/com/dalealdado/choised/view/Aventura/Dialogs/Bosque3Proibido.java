@@ -7,7 +7,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,13 +15,12 @@ import com.daimajia.androidanimations.library.YoYo;
 import com.dalealdado.choised.model.Protagonista;
 import com.dalealdado.dalealdado.R;
 
-public class Cueva1Dialog {
-
+public class Bosque3Proibido {
     TextView name, texto;
     ImageView pj, npc, next;
-    String [] historia= {"¿Que es esto que hay en el suelo?", "*en el suelo habria una carta que "+Protagonista.getNombre()+" cojeria y la leeria*","¡Es una carta con el plan para matar al Rey!","Iré al castillo para enseñarselo a la guardia real"};
+    String [] historia= {"Parece que se trama algo dento...", "antes de investigar completare la misión."};
     int cont = 0;
-    public Cueva1Dialog(final Context context){
+    public Bosque3Proibido(final Context context){
         final Dialog dialog = new Dialog(context);
         Window window = dialog.getWindow();
         window.setGravity(Gravity.BOTTOM);
@@ -39,7 +37,6 @@ public class Cueva1Dialog {
 
         npc.setImageResource(R.color.transparente);
 
-        imagenProta();
         name.setText(Protagonista.getNombre());
 
         texto.setText(historia[cont]);
@@ -50,46 +47,6 @@ public class Cueva1Dialog {
                 .playOn(next);
 
 
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cont++;
-                if (cont == historia.length){
-                    dialog.dismiss();
-                } else {
-                    ponerTexto();
-                }
-
-
-            }
-        });
-
-
-        dialog.show();
-    }
-
-    public void ponerTexto(){
-        switch (cont){
-            case 1:
-                texto.setText(historia[cont]);
-                name.setText("");
-                pj.setImageResource(R.color.transparente);
-                npc.setImageResource(R.color.transparente);
-                Protagonista.setDinero(Protagonista.getDinero()+20);
-                Protagonista.setCarta(true);
-                break;
-            case 2:
-                texto.setText(historia[cont]);
-                imagenProta();
-                name.setText(Protagonista.getNombre());
-                break;
-            case 3:
-                texto.setText(historia[cont]);
-                break;
-        }
-    }
-
-    void imagenProta(){
         switch (Protagonista.getImagen()){
             case 1:
                 pj.setImageResource(R.drawable.pm1);
@@ -116,5 +73,22 @@ public class Cueva1Dialog {
                 pj.setImageResource(R.drawable.pf4);
                 break;
         }
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cont++;
+                    if (cont == historia.length){
+                        dialog.dismiss();
+                    } else {
+
+                        texto.setText(historia[cont]);
+                    }
+
+
+            }
+        });
+
+        dialog.show();
     }
 }

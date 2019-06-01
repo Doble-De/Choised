@@ -1,4 +1,4 @@
-package com.dalealdado.choised;
+package com.dalealdado.choised.view;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.support.v7.app.AppCompatActivity;

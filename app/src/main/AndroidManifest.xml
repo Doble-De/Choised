@@ -39,8 +39,8 @@
         <activity android:name="com.dalealdado.choised.view.Aventura.BarrioArma" />
         <activity android:name="com.dalealdado.choised.view.Aventura.BarrioMagia" />
         <activity android:name="com.dalealdado.choised.view.Aventura.Fuente" />
-        <activity android:name="com.dalealdado.choised.EnemigosModifActivity" />
-        <activity android:name="com.dalealdado.choised.MainActivity">
+        <activity android:name="com.dalealdado.choised.view.EnemigosModifActivity" />
+        <activity android:name="com.dalealdado.choised.view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,7 +48,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.dalealdado.choised.DadosActivity" />
-        <activity android:name="com.dalealdado.choised.InfoActivity" />
+        <activity android:name="com.dalealdado.choised.view.InfoActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
@@ -58,14 +58,14 @@
             android:name="com.dalealdado.choised.PersonajesActivity"
             android:label="@string/title_activity_personajes"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.dalealdado.choised.EnemigosNewActivity" />
+        <activity android:name="com.dalealdado.choised.view.EnemigosNewActivity" />
         <activity android:name="com.dalealdado.choised.view.EnemigosShowActivity" />
-        <activity android:name="com.dalealdado.choised.HeroesNewActivity" />
+        <activity android:name="com.dalealdado.choised.view.HeroesNewActivity" />
         <activity android:name="com.dalealdado.choised.view.HeroesShowActivity" />
         <activity android:name="com.dalealdado.choised.ShopActivity" />
         <activity android:name="com.dalealdado.choised.EscenariosActivity" />
-        <activity android:name="com.dalealdado.choised.EscenarioNewActivity" />
-        <activity android:name="com.dalealdado.choised.EscenarioShowActivity" />
+        <activity android:name="com.dalealdado.choised.view.EscenarioNewActivity" />
+        <activity android:name="com.dalealdado.choised.view.EscenarioShowActivity" />
         <activity android:name="com.dalealdado.choised.EscenarioActivity" />
     </application>
 

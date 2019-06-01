@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import com.dalealdado.choised.model.Enemigo;
 import com.dalealdado.choised.DADViewModel;
-import com.dalealdado.choised.EnemigosModifActivity;
 import com.dalealdado.dalealdado.R;
 
 public class EnemigosShowActivity extends AppCompatActivity {

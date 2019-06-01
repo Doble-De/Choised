@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dalealdado.choised.model.Escenario;
+import com.dalealdado.choised.view.EscenarioShowActivity;
+import com.dalealdado.choised.view.EscenarioViewModel;
 import com.dalealdado.dalealdado.R;
 
 import java.util.List;

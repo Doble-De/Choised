@@ -12,6 +12,8 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.View;
 
+import com.dalealdado.choised.view.EnemigosNewActivity;
+import com.dalealdado.choised.view.HeroesNewActivity;
 import com.dalealdado.dalealdado.R;
 
 public class PersonajesActivity extends AppCompatActivity {

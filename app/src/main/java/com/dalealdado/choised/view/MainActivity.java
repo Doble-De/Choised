@@ -1,4 +1,4 @@
-package com.dalealdado.choised;
+package com.dalealdado.choised.view;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.dalealdado.choised.DadosActivity;
+import com.dalealdado.choised.EscenariosActivity;
+import com.dalealdado.choised.PersonajesActivity;
 import com.dalealdado.dalealdado.R;
 import com.dalealdado.choised.view.Aventura.ProtagonistaActivity;
 

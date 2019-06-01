@@ -1,4 +1,4 @@
-package com.dalealdado.choised;
+package com.dalealdado.choised.view;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.dalealdado.choised.DADViewModel;
 import com.dalealdado.choised.model.Enemigo;
 import com.dalealdado.dalealdado.R;
 

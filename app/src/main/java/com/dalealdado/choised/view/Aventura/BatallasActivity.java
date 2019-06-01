@@ -8,7 +8,6 @@ import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -17,7 +16,7 @@ import android.widget.TextView;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.dalealdado.choised.MainActivity;
+import com.dalealdado.choised.view.MainActivity;
 import com.dalealdado.choised.model.Bandido;
 import com.dalealdado.choised.model.Cazador;
 import com.dalealdado.choised.model.Jabali;

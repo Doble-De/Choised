@@ -7,7 +7,7 @@
     tools:context="com.dalealdado.choised.view.Aventura.Dialogs.FuenteDialog">
 
     <ImageView
-        android:id="@+id/pj"
+        android:id="@+id/personaje"
         android:layout_width="246dp"
         android:layout_height="242dp"
         android:layout_marginTop="220dp"
@@ -38,7 +38,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pj"
+        app:layout_constraintTop_toBottomOf="@+id/personaje"
         app:srcCompat="@drawable/tablon" />
 
     <TextView

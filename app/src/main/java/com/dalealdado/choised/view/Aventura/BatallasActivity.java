@@ -442,7 +442,7 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
             mHandler.postDelayed(AnimacionCura, 400);
             mHandler.postDelayed(AnimacionCura, 1000);
             mHandler.postDelayed(AnimacionCura, 1300);
-            if (Protagonista.getVida() < 20){
+            if (Protagonista.getVida() < 35){
                 int curarrestante = Protagonista.getVida();
                 Protagonista.setVida(Protagonista.getVida() - curarrestante);
             }else {

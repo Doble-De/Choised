@@ -10,14 +10,16 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.dalealdado.choised.model.Protagonista;
 import com.dalealdado.dalealdado.R;
 
 public class ModalInventario {
 
-    int[] item;
+    int[] item, cantidad;
     ImageView ivitem1, ivitem2, ivitem3, ivitem4, ivitem5, ivitem6, ivitem7, ivitem8, ivitem9;
+    TextView cant1, cant2, cant3, cant4, cant5, cant6, cant7, cant8, cant9;
     Button salir;
 
 
@@ -38,6 +40,7 @@ public class ModalInventario {
         dialog.setContentView(R.layout.activity_modal_inventario);
         salir = dialog.findViewById(R.id.exit);
         item = Protagonista.getInventario();
+        cantidad = Protagonista.getCantidad();
 
 
         ivitem1 = (ImageView) dialog.findViewById(R.id.item1);
@@ -49,7 +52,15 @@ public class ModalInventario {
         ivitem7 = (ImageView) dialog.findViewById(R.id.item7);
         ivitem8 = (ImageView) dialog.findViewById(R.id.item8);
         ivitem9 = (ImageView) dialog.findViewById(R.id.item9);
-
+        cant1 = dialog.findViewById(R.id.cant1);
+        cant2 = dialog.findViewById(R.id.cant2);
+        cant3 = dialog.findViewById(R.id.cant3);
+        cant4 = dialog.findViewById(R.id.cant4);
+        cant5 = dialog.findViewById(R.id.cant5);
+        cant6 = dialog.findViewById(R.id.cant6);
+        cant7 = dialog.findViewById(R.id.cant7);
+        cant8 = dialog.findViewById(R.id.cant8);
+        cant9 = dialog.findViewById(R.id.cant9);
 
         PonerImagen();
 
@@ -91,6 +102,15 @@ public class ModalInventario {
         ImagenObjeto(item[6], ivitem7);
         ImagenObjeto(item[7], ivitem8);
         ImagenObjeto(item[8], ivitem9);
+        cant1.setText(String.valueOf(cantidad[0]));
+        cant2.setText(String.valueOf(cantidad[1]));
+        cant3.setText(String.valueOf(cantidad[2]));
+        cant4.setText(String.valueOf(cantidad[3]));
+        cant5.setText(String.valueOf(cantidad[4]));
+        cant6.setText(String.valueOf(cantidad[5]));
+        cant7.setText(String.valueOf(cantidad[6]));
+        cant8.setText(String.valueOf(cantidad[7]));
+        cant9.setText(String.valueOf(cantidad[8]));
     }
 
     public void ImagenObjeto(int tipo, ImageView imageView){

@@ -25,7 +25,14 @@ public class CarniceriaCompleted {
     String [] historia= {"Bueno, ya tengo su carne", "¡Fantastico!", "Pues toma por la rapdez de doy algo más","HAS GANADO 20 de ORO", "¡Gracias! Me viene estupendo","Venga, si consigues 6 más no dudes en pasarte", "¡Vale Gracias!"};
     String [] fin={"En realidad ya he cumplido la misión","si, supongo que me ire ya.","¡Toca descansar un poco!"};
     String [] continuar={"Si, me quedare por aqui un rato más","creo que hay cosas interesantes que hacer."};
-    public CarniceriaCompleted(final Context context){
+
+    public interface fin{
+        void numerofin(int id);
+    }
+    private fin interfaz;
+
+    public CarniceriaCompleted(final Context context, fin activity){
+        interfaz = activity;
         final Dialog dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(false);
@@ -35,7 +42,7 @@ public class CarniceriaCompleted {
         name = dialog.findViewById(R.id.name);
         texto = dialog.findViewById(R.id.texto);
         next = dialog.findViewById(R.id.next);
-        pj = dialog.findViewById(R.id.pj);
+        pj = dialog.findViewById(R.id.personaje);
         npc = dialog.findViewById(R.id.npc);
         opcion1 = dialog.findViewById(R.id.opcion1);
         opcion2 = dialog.findViewById(R.id.opcion2);
@@ -105,8 +112,8 @@ public class CarniceriaCompleted {
                 }else if (salir) {
                     cont2++;
                     if (cont2 == fin.length) {
+                        interfaz.numerofin(1);
                         dialog.dismiss();
-                        Protagonista.setCarniceria(false);
                     } else {
                         rutaFin();
                     }
@@ -114,7 +121,6 @@ public class CarniceriaCompleted {
                     cont2++;
                     if ( cont2 == continuar.length ){
                         dialog.dismiss();
-                        Protagonista.setCarniceria(false);
                     } else{
                         rutaNoFin();
                     }

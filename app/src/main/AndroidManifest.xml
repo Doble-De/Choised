@@ -11,10 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name="com.dalealdado.choised.view.Aventura.Final4"></activity>
-        <activity android:name="com.dalealdado.choised.view.Aventura.Final3" />
-        <activity android:name="com.dalealdado.choised.view.Aventura.Final1" />
-        <activity android:name="com.dalealdado.choised.view.Aventura.Final2" />
+        <activity android:name="com.dalealdado.choised.view.Aventura.Fin4"></activity>
+        <activity android:name="com.dalealdado.choised.view.Aventura.Fin3" />
+        <activity android:name="com.dalealdado.choised.view.Aventura.Fin1" />
+        <activity android:name="com.dalealdado.choised.view.Aventura.Fin2" />
         <activity android:name="com.dalealdado.choised.view.Aventura.Dialogs.FinalCombate" />
         <activity android:name="com.dalealdado.choised.view.Aventura.BatallasActivity" />
         <activity android:name="com.dalealdado.choised.view.Aventura.Dialogs.ModalInventario" />

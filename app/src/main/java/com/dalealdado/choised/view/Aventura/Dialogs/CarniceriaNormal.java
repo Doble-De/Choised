@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.daimajia.androidanimations.library.Techniques;
-import com.daimajia.androidanimations.library.YoYo;
 import com.dalealdado.choised.model.Protagonista;
 import com.dalealdado.dalealdado.R;
 
@@ -33,7 +31,7 @@ public class CarniceriaNormal {
         name = dialog.findViewById(R.id.name);
         texto = dialog.findViewById(R.id.texto);
         next = dialog.findViewById(R.id.next);
-        pj = dialog.findViewById(R.id.pj);
+        pj = dialog.findViewById(R.id.personaje);
         npc = dialog.findViewById(R.id.npc);
         opcion1 = dialog.findViewById(R.id.opcion1);
         opcion2 = dialog.findViewById(R.id.opcion2);

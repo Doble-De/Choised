@@ -206,6 +206,7 @@ public class ProtagonistaActivity extends AppCompatActivity implements SelectPj.
                     Protagonista.setEspada(true);
                     Protagonista.setEscudo(true);
                     Protagonista.setEmblema(true);
+                    Protagonista.setCarne(5);
 
                     startActivity(inico);
                 } else {

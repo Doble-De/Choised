@@ -7,6 +7,18 @@
     tools:context="com.dalealdado.choised.view.Aventura.Cueva2"
     android:background="@drawable/cueva2">
 
+    <ImageView
+        android:id="@+id/cuevaenb"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cueva2_2"
+        tools:srcCompat="@drawable/cueva2_2" />
+
     <ImageButton
         android:id="@+id/izquierda6"
         android:layout_width="50dp"

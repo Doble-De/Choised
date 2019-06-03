@@ -29,7 +29,14 @@ public class CastilloDialog {
     String [] sinpruebas={"Ehh... Pues no la verdad que no", "pero que lo he escuchado enserio","Claro que si... Hummmm... Sospechoso", "En realidad solo te veo a ti hablando...", "Hablando de ¡MATAR AL REY!", "¿¡QUE!? Si osea pero porque lo he oido", "No me fio... !SOLDADOS¡", "¡NOOOO, SOLO QUERIA AVISAR!", "Estas detenido, seras encarcelado hasta nuevo aviso"};
     String [] conpruebas={"Pues si, he encontrado esta carta en la cueva del bosque", "*le entrega la carta*","*la leeria atentamente*","¡NO PUEDE SER!","¿El ministro quiere matar al rey?","Si, es lo que te estaba diciendo","Gacias por tus servicios al rey", "Se te recompensara"};
 
-    public CastilloDialog(final Context context){
+    public interface fin{
+        void numerofin(int id);
+    }
+    private fin interfaz;
+
+    public CastilloDialog(final Context context, fin actividad){
+
+        interfaz = actividad;
         final Dialog dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(false);
@@ -39,7 +46,7 @@ public class CastilloDialog {
         name = dialog.findViewById(R.id.name);
         texto = dialog.findViewById(R.id.texto);
         next = dialog.findViewById(R.id.next);
-        pj = dialog.findViewById(R.id.pj);
+        pj = dialog.findViewById(R.id.personaje);
         npc = dialog.findViewById(R.id.npc);
         opcion1 = dialog.findViewById(R.id.opcion1);
         opcion2 = dialog.findViewById(R.id.opcion2);
@@ -125,7 +132,7 @@ public class CastilloDialog {
                     turnoprota();
                     pasar = true;
                     cont = 0;
-                    texto.setText(nocontarlo[0]);
+                    texto.setText(conpruebas[0]);
                 }
             }
         });
@@ -192,6 +199,7 @@ public class CastilloDialog {
                         cont2++;
                     } else if (carta){
                         if ( cont2 == conpruebas.length ){
+                            interfaz.numerofin(2);
                             dialog.dismiss();
                         } else{
                             rutaPruebas();
@@ -199,6 +207,7 @@ public class CastilloDialog {
                         cont2++;
                     } else if (sincarta){
                         if ( cont2 == sinpruebas.length ){
+                            interfaz.numerofin(3);
                             dialog.dismiss();
                         } else{
                             rutaSinPruebas();
@@ -346,25 +355,25 @@ public class CastilloDialog {
                 turnonpc();
                 break;
             case 2:
-                texto.setText(contarlo[cont2]);
+                texto.setText(conpruebas[cont2]);
                 turnoprota();
                 break;
             case 3:
-                texto.setText(contarlo[cont2]);
+                texto.setText(conpruebas[cont2]);
                 turnonpc();
                 break;
             case 4:
-                texto.setText(contarlo[cont2]);
+                texto.setText(conpruebas[cont2]);
                 turnoprota();
                 break;
             case 5:
-                texto.setText(contarlo[cont2]);
+                texto.setText(conpruebas[cont2]);
                 break;
             case 6:
-                texto.setText(contarlo[cont2]);
+                texto.setText(conpruebas[cont2]);
                 break;
             case 7:
-                texto.setText(contarlo[cont2]);
+                texto.setText(conpruebas[cont2]);
                 break;
         }
 

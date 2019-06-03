@@ -30,7 +30,7 @@ public class PreCuevaDialog {
         name = dialog.findViewById(R.id.name);
         texto = dialog.findViewById(R.id.texto);
         next = dialog.findViewById(R.id.next);
-        pj = dialog.findViewById(R.id.pj);
+        pj = dialog.findViewById(R.id.personaje);
         npc = dialog.findViewById(R.id.npc);
 
         pj.setImageResource(R.color.transparente);

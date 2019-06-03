@@ -10,7 +10,7 @@ import android.widget.ImageButton;
 import com.dalealdado.choised.view.Aventura.Dialogs.CastilloDialog;
 import com.dalealdado.dalealdado.R;
 
-public class Castillo extends AppCompatActivity {
+public class Castillo extends AppCompatActivity implements CastilloDialog.fin{
 
     Context context;
     ImageButton mDerecha;
@@ -26,7 +26,7 @@ public class Castillo extends AppCompatActivity {
         context = this;
 
 
-        new CastilloDialog(context);
+        new CastilloDialog(context, Castillo.this);
 
         mDerecha.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,5 +35,14 @@ public class Castillo extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void numerofin(int id) {
+        if (id == 2){
+            startActivity(new Intent(Castillo.this, Fin2.class));
+        } else if (id == 3){
+            startActivity(new Intent(Castillo.this, Fin3.class));
+        }
     }
 }

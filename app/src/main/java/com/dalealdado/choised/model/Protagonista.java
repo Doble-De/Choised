@@ -8,6 +8,10 @@ public class Protagonista {
     static int[] inventario = new int[9];
     static int[] cantidad = new int[9];
 
+    public static int[] getCantidad() {
+        return cantidad;
+    }
+
     public static int getVidaMaxima() {
         return vidaMaxima;
     }

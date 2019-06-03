@@ -7,7 +7,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -34,7 +33,7 @@ public class Cueva1Dialog {
         name = dialog.findViewById(R.id.name);
         texto = dialog.findViewById(R.id.texto);
         next = dialog.findViewById(R.id.next);
-        pj = dialog.findViewById(R.id.pj);
+        pj = dialog.findViewById(R.id.personaje);
         npc = dialog.findViewById(R.id.npc);
 
         npc.setImageResource(R.color.transparente);

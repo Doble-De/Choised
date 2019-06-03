@@ -5,15 +5,10 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.daimajia.androidanimations.library.Techniques;
-import com.daimajia.androidanimations.library.YoYo;
 import com.dalealdado.choised.model.Protagonista;
 import com.dalealdado.dalealdado.R;
 
@@ -40,7 +35,7 @@ public class FinalCombate extends AppCompatActivity {
 
         titulo = dialog.findViewById(R.id.titulo);
         subtitulo = dialog.findViewById(R.id.subtitulo);
-        oro = dialog.findViewById(R.id.oro);
+        oro = dialog.findViewById(R.id.oro6);
         carne = dialog.findViewById(R.id.carne);
         continuar = dialog.findViewById(R.id.continuar);
 

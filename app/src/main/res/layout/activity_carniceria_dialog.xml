@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/tablon" />
 
     <ImageView
-        android:id="@+id/pj"
+        android:id="@+id/personaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="290dp"
@@ -45,7 +45,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/madera"
-        app:layout_constraintTop_toBottomOf="@+id/pj" />
+        app:layout_constraintTop_toBottomOf="@+id/personaje" />
 
     <TextView
         android:id="@+id/texto"

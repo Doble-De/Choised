@@ -64,7 +64,7 @@ public class Bosque1 extends AppCompatActivity implements Bosque1Dialog.pelea {
 
         jabali = random.nextInt(4);
 
-        if (Protagonista.getCarne() != 5) {
+        if (Protagonista.getCarne() <= 5) {
             if (jabali != 3) {
                 huellas.setImageResource(R.drawable.transparente);
             } else {

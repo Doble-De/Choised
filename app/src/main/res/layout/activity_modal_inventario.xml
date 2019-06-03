@@ -39,6 +39,13 @@
             app:cardElevation="8dp">
 
 
+            <TextView
+                android:id="@+id/cant1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -74,6 +81,13 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
+
+            <TextView
+                android:id="@+id/cant2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -111,6 +125,13 @@
             app:cardElevation="8dp">
 
 
+            <TextView
+                android:id="@+id/cant3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -146,6 +167,13 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
+
+            <TextView
+                android:id="@+id/cant4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -184,6 +212,13 @@
             app:cardElevation="8dp">
 
 
+            <TextView
+                android:id="@+id/cant5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -221,6 +256,13 @@
             app:cardElevation="8dp">
 
 
+            <TextView
+                android:id="@+id/cant6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -256,6 +298,13 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
+
+            <TextView
+                android:id="@+id/cant7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -293,6 +342,13 @@
             app:cardElevation="8dp">
 
 
+            <TextView
+                android:id="@+id/cant8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -329,6 +385,13 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
+
+            <TextView
+                android:id="@+id/cant9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"

@@ -15,7 +15,7 @@ import com.dalealdado.choised.view.Aventura.Dialogs.CarniceriaNormal;
 import com.dalealdado.choised.view.Aventura.Dialogs.FuenteDialog;
 import com.dalealdado.dalealdado.R;
 
-public class Mercado extends AppCompatActivity {
+public class Mercado extends AppCompatActivity implements CarniceriaCompleted.fin{
 
     ImageButton mIzquierda, mAbajo;
     Intent barrioMagia, entradaBosque;
@@ -40,7 +40,7 @@ public class Mercado extends AppCompatActivity {
                 if (Protagonista.getCarniceria()){
                     new CarniceriaDialog(context);
                 } else if (Protagonista.getCarne() >= 6){
-                    new CarniceriaCompleted(context);
+                    new CarniceriaCompleted(context, Mercado.this);
                 } else {
                     new CarniceriaNormal(context);
                 }
@@ -56,5 +56,12 @@ public class Mercado extends AppCompatActivity {
                 startActivity(barrioMagia);
             }
         });
+    }
+
+    @Override
+    public void numerofin(int id) {
+        if (id == 1){
+            startActivity(new Intent(Mercado.this, Fin1.class));
+        }
     }
 }

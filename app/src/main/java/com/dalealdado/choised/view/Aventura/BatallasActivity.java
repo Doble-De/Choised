@@ -465,9 +465,9 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
 
             if (tipodeEnemigo.equals(enemigosPosibles[0]) && jabali.getVida() <=0){
                 jabali.setVida(jabali.getVida() - Protagonista.getMagia()+20);
-            } else if (tipodeEnemigo.equals(enemigosPosibles[1]) && jabali.getVida() <=0){
+            } else if (tipodeEnemigo.equals(enemigosPosibles[1]) && cazador.getVida() <=0){
                 cazador.setVida(cazador.getVida() - Protagonista.getMagia()+20);
-            }else if (tipodeEnemigo.equals(enemigosPosibles[2]) && jabali.getVida() <=0){
+            }else if (tipodeEnemigo.equals(enemigosPosibles[2]) && bandido.getVida() <=0){
                 bandido.setVida(bandido.getVida() - Protagonista.getMagia()+20);
             }
 

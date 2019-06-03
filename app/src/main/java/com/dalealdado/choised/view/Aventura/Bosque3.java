@@ -40,6 +40,9 @@ public class Bosque3 extends AppCompatActivity implements Bosque3Dialog.pelea {
             @Override
             public void onClick(View v) {
                 startActivity(bosque6);
+                bAbajo.setEnabled(false);
+                bIzquierda.setEnabled(false);
+                bDerecha.setEnabled(false);
             }
         });
 
@@ -47,6 +50,9 @@ public class Bosque3 extends AppCompatActivity implements Bosque3Dialog.pelea {
             @Override
             public void onClick(View v) {
                 startActivity(bosque2);
+                bAbajo.setEnabled(false);
+                bIzquierda.setEnabled(false);
+                bDerecha.setEnabled(false);
             }
         });
 
@@ -59,6 +65,9 @@ public class Bosque3 extends AppCompatActivity implements Bosque3Dialog.pelea {
                     new Bosque3Proibido(context);
                 } else {
                     startActivity(cueva1);
+                    bAbajo.setEnabled(false);
+                    bIzquierda.setEnabled(false);
+                    bDerecha.setEnabled(false);
                 }
             }
         });
@@ -70,15 +79,15 @@ public class Bosque3 extends AppCompatActivity implements Bosque3Dialog.pelea {
         Protagonista.setAviso(true);
 
         YoYo.with(Techniques.BounceInUp)
-                .duration(5000)
+                .duration(2000)
                 .playOn(bAbajo);
 
         YoYo.with(Techniques.BounceInLeft)
-                .duration(5000)
+                .duration(2000)
                 .playOn(bIzquierda);
 
         YoYo.with(Techniques.BounceInRight)
-                .duration(5000)
+                .duration(2000)
                 .playOn(bDerecha);
     }
 

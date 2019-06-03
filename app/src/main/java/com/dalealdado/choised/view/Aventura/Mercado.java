@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.dalealdado.choised.model.Protagonista;
 import com.dalealdado.choised.view.Aventura.Dialogs.CarniceriaCompleted;
 import com.dalealdado.choised.view.Aventura.Dialogs.CarniceriaDialog;
@@ -17,8 +19,8 @@ import com.dalealdado.dalealdado.R;
 
 public class Mercado extends AppCompatActivity implements CarniceriaCompleted.fin{
 
-    ImageButton mIzquierda, mAbajo;
-    Intent barrioMagia, entradaBosque;
+    ImageButton mIzquierda;
+    Intent barrioMagia;
     Button hablar;
     Context context;
 
@@ -54,8 +56,16 @@ public class Mercado extends AppCompatActivity implements CarniceriaCompleted.fi
             @Override
             public void onClick(View v) {
                 startActivity(barrioMagia);
+                mIzquierda.setEnabled(false);
+
             }
         });
+
+        YoYo.with(Techniques.BounceInLeft)
+                .duration(2000)
+                .playOn(mIzquierda);
+
+
     }
 
     @Override

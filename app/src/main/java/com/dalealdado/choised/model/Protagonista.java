@@ -217,7 +217,9 @@ public class Protagonista {
             if ( i+1 != inventario.length){
                 if (inventario[i] == 0 && inventario[i+1] != 0){
                     inventario[i] = inventario[i+1];
+                    cantidad[i] = cantidad[i+1];
                     inventario[i+1] = 0;
+                    cantidad[i+1] = 0;
                 }
             }
 

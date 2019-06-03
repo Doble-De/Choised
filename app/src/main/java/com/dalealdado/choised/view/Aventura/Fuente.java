@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.dalealdado.choised.model.Protagonista;
 import com.dalealdado.choised.view.Aventura.Dialogs.FuenteDialog;
 import com.dalealdado.dalealdado.R;
@@ -43,7 +45,10 @@ public class Fuente extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     startActivity(magia);
-
+                    mAbajo.setEnabled(false);
+                    mIzquierda.setEnabled(false);
+                    mDerecha.setEnabled(false);
+                    mArriba.setEnabled(false);
                 }
             });
 
@@ -54,6 +59,10 @@ public class Fuente extends AppCompatActivity {
                         new FuenteDialog(context);
                     }else {
                         startActivity(bosque);
+                        mAbajo.setEnabled(false);
+                        mIzquierda.setEnabled(false);
+                        mDerecha.setEnabled(false);
+                        mArriba.setEnabled(false);
                     }
                 }
             });
@@ -62,6 +71,10 @@ public class Fuente extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     startActivity(casa_semilla);
+                    mAbajo.setEnabled(false);
+                    mIzquierda.setEnabled(false);
+                    mDerecha.setEnabled(false);
+                    mArriba.setEnabled(false);
                 }
             });
 
@@ -69,8 +82,27 @@ public class Fuente extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     startActivity(castillo);
+                    mAbajo.setEnabled(false);
+                    mIzquierda.setEnabled(false);
+                    mDerecha.setEnabled(false);
+                    mArriba.setEnabled(false);
                 }
             });
 
+            YoYo.with(Techniques.BounceInDown)
+                    .duration(2000)
+                    .playOn(mArriba);
+
+            YoYo.with(Techniques.BounceInLeft)
+                    .duration(2000)
+                    .playOn(mIzquierda);
+
+            YoYo.with(Techniques.BounceInRight)
+                    .duration(2000)
+                    .playOn(mDerecha);
+
+            YoYo.with(Techniques.BounceInUp)
+                    .duration(2000)
+                    .playOn(mAbajo);
         }
 }

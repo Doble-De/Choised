@@ -40,6 +40,9 @@ public class Bosque5 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(bosque2);
+                bArriba.setEnabled(false);
+                bIzquierda.setEnabled(false);
+                bDerecha.setEnabled(false);
             }
         });
 
@@ -47,6 +50,9 @@ public class Bosque5 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(bosque6);
+                bArriba.setEnabled(false);
+                bIzquierda.setEnabled(false);
+                bDerecha.setEnabled(false);
             }
         });
 
@@ -54,6 +60,9 @@ public class Bosque5 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(bosque4);
+                bArriba.setEnabled(false);
+                bIzquierda.setEnabled(false);
+                bDerecha.setEnabled(false);
             }
         });
 
@@ -76,15 +85,15 @@ public class Bosque5 extends AppCompatActivity {
         }
 
         YoYo.with(Techniques.BounceInDown)
-                .duration(5000)
+                .duration(2000)
                 .playOn(bArriba);
 
         YoYo.with(Techniques.BounceInLeft)
-                .duration(5000)
+                .duration(2000)
                 .playOn(bIzquierda);
 
         YoYo.with(Techniques.BounceInRight)
-                .duration(5000)
+                .duration(2000)
                 .playOn(bDerecha);
     }
 }

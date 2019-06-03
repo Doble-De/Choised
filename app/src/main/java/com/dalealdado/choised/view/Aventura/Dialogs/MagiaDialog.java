@@ -23,7 +23,7 @@ public class MagiaDialog {
     TextView text1, text2, text3, text1_2, text2_2, text3_2, text1_3, text2_3, text3_3, dinero;
     int restDinero;
 
-    public MagiaDialog(final Context context){
+    public MagiaDialog(final Context context, final Toast toast){
         final Dialog dialog = new Dialog(context);
         Window window = dialog.getWindow();
         window.setGravity(Gravity.TOP);
@@ -70,7 +70,7 @@ public class MagiaDialog {
                     Protagonista.añadirInventario(1);
                 }
                 else {
-                    Toast.makeText(context, "No tienes suficiente dinero para comprar ese objeto.",Toast.LENGTH_SHORT);
+                    toast.makeText(context, "No tienes suficiente dinero para comprar ese objeto.",Toast.LENGTH_SHORT);
                     //System.out.println("No tienes suficiente dinero");
                 }
             }
@@ -100,10 +100,10 @@ public class MagiaDialog {
                 @Override
                 public void onClick(View v) {
                     if (Protagonista.getDinero() >= 5) {
-                        text1_2.setText("VENDIDO");
-                        text1_2.setTextColor(R.color.azulflojo);
-                        text2_2.setText("");
-                        text3_2.setText("");
+                        text1_3.setText("VENDIDO");
+                        text1_3.setTextColor(R.color.azulflojo);
+                        text2_3.setText("");
+                        text3_3.setText("");
                         emblema.setBackgroundColor(R.color.botonescenario);
                         restDinero = Protagonista.getDinero() - 5;
                         Protagonista.setDinero(restDinero);

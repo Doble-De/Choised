@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.dalealdado.choised.view.Aventura.Dialogs.CastilloDialog;
 import com.dalealdado.dalealdado.R;
 
@@ -32,8 +34,14 @@ public class Castillo extends AppCompatActivity implements CastilloDialog.fin{
             @Override
             public void onClick(View v) {
                 startActivity(fuente);
+                mDerecha.setEnabled(false);
+
             }
         });
+
+        YoYo.with(Techniques.BounceInRight)
+                .duration(2000)
+                .playOn(mDerecha);
 
     }
 

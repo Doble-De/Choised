@@ -94,7 +94,7 @@ public class CastilloDialog {
 
                     decirlo = true;
                     cont = 0;
-                    texto.setText(contarlo[0]);
+                    texto.setText(conpruebas[0]);
                 }
 
             }
@@ -132,7 +132,7 @@ public class CastilloDialog {
                     turnoprota();
                     pasar = true;
                     cont = 0;
-                    texto.setText(conpruebas[0]);
+                    texto.setText(sinpruebas[0]);
                 }
             }
         });
@@ -352,11 +352,11 @@ public class CastilloDialog {
         switch (cont2){
             case 1:
                 texto.setText(conpruebas[cont2]);
-                turnonpc();
+                turnoprota();
                 break;
             case 2:
                 texto.setText(conpruebas[cont2]);
-                turnoprota();
+                turnonpc();
                 break;
             case 3:
                 texto.setText(conpruebas[cont2]);
@@ -364,13 +364,14 @@ public class CastilloDialog {
                 break;
             case 4:
                 texto.setText(conpruebas[cont2]);
-                turnoprota();
                 break;
             case 5:
                 texto.setText(conpruebas[cont2]);
+                turnoprota();
                 break;
             case 6:
                 texto.setText(conpruebas[cont2]);
+                turnonpc();
                 break;
             case 7:
                 texto.setText(conpruebas[cont2]);

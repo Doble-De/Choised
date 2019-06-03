@@ -59,4 +59,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/carne" />
+
+    <ImageView
+        android:id="@+id/oroicon"
+        android:layout_width="15dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/oro6"
+        app:layout_constraintTop_toBottomOf="@+id/subtitulo"
+        app:srcCompat="@drawable/gold"
+        tools:srcCompat="@drawable/gold" />
+
+    <ImageView
+        android:id="@+id/carneicon"
+        android:layout_width="26dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="2dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/carne"
+        app:layout_constraintTop_toBottomOf="@+id/oroicon"
+        app:srcCompat="@drawable/carne"
+        tools:srcCompat="@drawable/carne" />
 </android.support.constraint.ConstraintLayout>

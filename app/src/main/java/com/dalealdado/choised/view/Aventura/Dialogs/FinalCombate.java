@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dalealdado.choised.model.Protagonista;
@@ -15,6 +16,7 @@ import com.dalealdado.dalealdado.R;
 public class FinalCombate extends AppCompatActivity {
 
    TextView titulo, subtitulo, oro, carne, continuar;
+   ImageView oroitem, carneitem;
    int winjabali = 0;
    int win = 1;
    int derrota = 2;
@@ -38,6 +40,8 @@ public class FinalCombate extends AppCompatActivity {
         oro = dialog.findViewById(R.id.oro6);
         carne = dialog.findViewById(R.id.carne);
         continuar = dialog.findViewById(R.id.continuar);
+        carneitem = dialog.findViewById(R.id.carneicon);
+        oroitem = dialog.findViewById(R.id.oroicon);
 
         dialog.show();
 
@@ -47,6 +51,7 @@ public class FinalCombate extends AppCompatActivity {
             oro.setText("Oro: "+dinero);
             Protagonista.setDinero(Protagonista.getDinero()+dinero);
             carne.setVisibility(View.VISIBLE);
+            carneitem.setVisibility(View.VISIBLE);
             continuar.setText("PULSA PARA CONTINUAR LA AVENTURA");
         }else if (tipo == win){
             titulo.setText("¡HAS GANADO!");
@@ -54,12 +59,15 @@ public class FinalCombate extends AppCompatActivity {
             oro.setText("Oro: "+dinero);
             Protagonista.setDinero(Protagonista.getDinero()+dinero);
             carne.setVisibility(View.INVISIBLE);
+            carneitem.setVisibility(View.INVISIBLE);
             continuar.setText("PULSA PARA CONTINUAR LA AVENTURA");
         }else if (tipo == derrota){
             titulo.setText("¡HAS PERDIDO!");
             subtitulo.setText("");
             oro.setText("");
             carne.setVisibility(View.INVISIBLE);
+            carneitem.setVisibility(View.INVISIBLE);
+            oroitem.setVisibility(View.INVISIBLE);
             continuar.setText("PULSA PARA VOLVER AL INICIO");
         }
 

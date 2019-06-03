@@ -17,7 +17,7 @@ import com.dalealdado.dalealdado.R;
 
 public class Cueva1 extends AppCompatActivity {
 
-    ImageButton bAbajo,bIzquierda;
+    ImageButton bDerecha,bIzquierda;
     Intent bosque3,cueva2;
     ImageView destello;
     Button carta;
@@ -29,7 +29,7 @@ public class Cueva1 extends AppCompatActivity {
         setContentView(R.layout.activity_cueva1);
 
         context = this;
-        bAbajo = findViewById(R.id.izquierda6);
+        bDerecha = findViewById(R.id.izquierda6);
         bIzquierda = findViewById(R.id.derecha6);
         destello = findViewById(R.id.destello);
         carta = findViewById(R.id.carta);
@@ -37,10 +37,12 @@ public class Cueva1 extends AppCompatActivity {
         bosque3 = new Intent( this, Bosque3.class);
         cueva2 = new Intent( this, Cueva2.class);
 
-        bAbajo.setOnClickListener(new View.OnClickListener() {
+        bDerecha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(bosque3);
+                bIzquierda.setEnabled(false);
+                bDerecha.setEnabled(false);
             }
         });
 
@@ -48,6 +50,8 @@ public class Cueva1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(cueva2);
+                bIzquierda.setEnabled(false);
+                bDerecha.setEnabled(false);
             }
         });
 
@@ -71,6 +75,15 @@ public class Cueva1 extends AppCompatActivity {
             destello.setImageResource(R.color.transparente);
             carta.setEnabled(false);
         }
+
+        YoYo.with(Techniques.BounceInLeft)
+                .duration(2000)
+                .playOn(bIzquierda);
+
+        YoYo.with(Techniques.BounceInRight)
+                .duration(2000)
+                .playOn(bDerecha);
+
 
     }
 }

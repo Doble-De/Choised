@@ -10,6 +10,7 @@ import android.view.View;
 import com.dalealdado.choised.DadosActivity;
 import com.dalealdado.choised.EscenariosActivity;
 import com.dalealdado.choised.PersonajesActivity;
+import com.dalealdado.choised.view.Aventura.TablonActivity;
 import com.dalealdado.dalealdado.R;
 import com.dalealdado.choised.view.Aventura.ProtagonistaActivity;
 
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.baventura).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ProtagonistaActivity.class));
+                startActivity(new Intent(MainActivity.this, TablonActivity.class));
                 mp.stop();
             }
         });

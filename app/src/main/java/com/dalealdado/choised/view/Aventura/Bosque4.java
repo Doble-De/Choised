@@ -15,7 +15,7 @@ import java.util.Random;
 
 public class Bosque4 extends AppCompatActivity {
 
-    ImageButton bAbajo,bIzquierda,bDerecha;
+    ImageButton bArriba,bDerecha;
     Intent bosque1,bosque5,batallas;
     int jabali;
     Random random = new Random();
@@ -25,8 +25,7 @@ public class Bosque4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bosque4);
 
-        bAbajo = findViewById(R.id.arriba);
-        bIzquierda = findViewById(R.id.izquierda1);
+        bArriba = findViewById(R.id.arriba);
         bDerecha = findViewById(R.id.derecha1);
         ImageView huellas= findViewById(R.id.huellas);
 
@@ -34,10 +33,12 @@ public class Bosque4 extends AppCompatActivity {
         bosque5 = new Intent( this, Bosque5.class);
         batallas = new Intent(Bosque4.this, BatallasActivity.class);
 
-        bAbajo.setOnClickListener(new View.OnClickListener() {
+        bArriba.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(bosque1);
+                bArriba.setEnabled(false);
+                bDerecha.setEnabled(false);
             }
         });
 
@@ -45,6 +46,8 @@ public class Bosque4 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(bosque5);
+                bArriba.setEnabled(false);
+                bDerecha.setEnabled(false);
             }
         });
 
@@ -66,11 +69,11 @@ public class Bosque4 extends AppCompatActivity {
         }
 
         YoYo.with(Techniques.BounceInDown)
-                .duration(5000)
-                .playOn(bAbajo);
+                .duration(2000)
+                .playOn(bArriba);
 
         YoYo.with(Techniques.BounceInRight)
-                .duration(5000)
+                .duration(2000)
                 .playOn(bDerecha);
     }
 }

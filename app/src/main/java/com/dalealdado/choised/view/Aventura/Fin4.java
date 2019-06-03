@@ -13,7 +13,7 @@ import com.dalealdado.dalealdado.R;
 
 public class Fin4 extends AppCompatActivity {
 
-    ImageView pj, barrotes;
+    ImageView pj, ala1, ala2;
     TextView titulo, texto1, texto2, texto3, fin, volver;
 
     @Override
@@ -28,10 +28,10 @@ public class Fin4 extends AppCompatActivity {
         fin = findViewById(R.id.fin);
         volver = findViewById(R.id.volver);
         pj = findViewById(R.id.personaje);
-        barrotes = findViewById(R.id.oro6);
+        ala1 = findViewById(R.id.alaizqu);
+        ala2 = findViewById(R.id.aladere);
 
         imagenProta();
-        barrotes.setImageResource(R.drawable.barrotes);
 
 
         volver.setOnClickListener(new View.OnClickListener() {

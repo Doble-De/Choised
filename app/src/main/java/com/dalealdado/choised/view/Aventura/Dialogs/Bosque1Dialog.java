@@ -20,7 +20,7 @@ public class Bosque1Dialog {
     TextView name, texto;
     ImageView pj, npc, next;
     Button opcion1, opcion2;
-    int cont = 1, cont2 = 1;
+    int cont = 1, cont2 = 0;
     boolean pagar = false, pelear= false;
     String[] historia = {"Vaya vaya...", "Parece que hay un intruso en mi bosque","¿Ehh? ¿Como que tu bosque?", "Como lo oyes, he vivido en este bosque toda mi vida","por lo tanto es mi bosque","Vaya logica...","He visto que has estado cazando jabalies","Si, para el carnicero de la ciudad","No me importa, o me pagas 20 de oro de comision...","O lo vas a pasar mal","¿¡QUE!?"};
     String[] dinero = {"Bueno, toma...","HAS PERDIDO 20 DE ORO","JAJAJAJAJAJAJA","Asi me gusta","gente que sepa lo que es de lo demas.","Quedate por aqui el tiempo que quieras", "ahora eres mi invitado","Ehh... Gracias supongo","Venga que vaya bien"};

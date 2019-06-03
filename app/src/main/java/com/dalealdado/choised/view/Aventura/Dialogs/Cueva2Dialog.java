@@ -16,9 +16,17 @@ public class Cueva2Dialog  {
 
     TextView name, texto;
     ImageView pj, npc, next;
-    String [] historia= {"PRUEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA ", " "};
+    int cont = 0;
+    String [] historia= {"*el amuleto empieza a brillar", "Parece que el amuleto esta reaccionando ante algo aqui...", "¿Que es esa marca de la pared?"};
 
-    public Cueva2Dialog(final Context context){
+    public interface fin{
+        void numerofin(int id);
+    }
+    private fin interfaz;
+
+    public Cueva2Dialog(final Context context, fin actividad){
+
+        interfaz = actividad;
         final Dialog dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(false);
@@ -32,10 +40,29 @@ public class Cueva2Dialog  {
         npc = dialog.findViewById(R.id.npc);
 
         npc.setImageResource(R.color.transparente);
+        pj.setImageResource(R.color.transparente);
+        name.setText("");
+        texto.setText(historia[cont]);
 
-        name.setText(Protagonista.getNombre());
-        texto.setText(historia[1]);
 
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cont++;
+                if (cont == historia.length) {
+                    interfaz.numerofin(4);
+                    dialog.dismiss();
+                }else {
+                    imagenProta();
+                    texto.setText(historia[cont]);
+                }
+            }
+        });
+
+        dialog.show();
+    }
+
+    void imagenProta(){
         switch (Protagonista.getImagen()){
             case 1:
                 pj.setImageResource(R.drawable.pm1);
@@ -62,14 +89,5 @@ public class Cueva2Dialog  {
                 pj.setImageResource(R.drawable.pf4);
                 break;
         }
-
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-
-        dialog.show();
     }
 }

@@ -45,6 +45,9 @@ public class Bosque1 extends AppCompatActivity implements Bosque1Dialog.pelea {
             @Override
             public void onClick(View v) {
                 startActivity(bosque4);
+                bAbajo.setEnabled(false);
+                bIzquierda.setEnabled(false);
+                bDerecha.setEnabled(false);
             }
         });
 
@@ -52,6 +55,9 @@ public class Bosque1 extends AppCompatActivity implements Bosque1Dialog.pelea {
             @Override
             public void onClick(View v) {
                 startActivity(fuente);
+                bAbajo.setEnabled(false);
+                bIzquierda.setEnabled(false);
+                bDerecha.setEnabled(false);
             }
         });
 
@@ -59,6 +65,9 @@ public class Bosque1 extends AppCompatActivity implements Bosque1Dialog.pelea {
             @Override
             public void onClick(View v) {
                 startActivity(bosque2);
+                bAbajo.setEnabled(false);
+                bIzquierda.setEnabled(false);
+                bDerecha.setEnabled(false);
             }
         });
 

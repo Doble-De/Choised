@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
@@ -15,7 +16,7 @@ import com.dalealdado.dalealdado.R;
 
 public class BarrioArma extends AppCompatActivity {
 
-    ImageButton bAbajo;
+    ImageButton bderecha;
     Intent magia;
     Button comprar;
     Context context;
@@ -33,23 +34,31 @@ public class BarrioArma extends AppCompatActivity {
                 .repeat(100)
                 .playOn(comprar);
 
-        bAbajo = findViewById(R.id.derecha5);
+        bderecha = findViewById(R.id.derecha5);
+
+        final Toast toast = new Toast(context);
 
         magia = new Intent( this, BarrioMagia.class);
 
-        bAbajo.setOnClickListener(new View.OnClickListener() {
+        bderecha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(magia);
+                bderecha.setEnabled(false);
             }
         });
 
         comprar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new ArmeriaDialog(context);
+                new ArmeriaDialog(context, toast);
             }
         });
+
+        YoYo.with(Techniques.BounceInRight)
+                .duration(2000)
+                .playOn(bderecha);
+
 
     }
 }

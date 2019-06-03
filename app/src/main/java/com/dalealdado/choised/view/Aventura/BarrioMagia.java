@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
@@ -43,10 +44,15 @@ public class BarrioMagia extends AppCompatActivity {
             arma = new Intent( this, BarrioArma.class);
             mercado = new Intent(this, Mercado.class);
 
+            final Toast toast =  new Toast(context);
+
             bAbajo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     startActivity(fuente);
+                    bAbajo.setEnabled(false);
+                    bIzquierda.setEnabled(false);
+                    bDerecha.setEnabled(false);
                 }
             });
 
@@ -54,6 +60,9 @@ public class BarrioMagia extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     startActivity(arma);
+                    bAbajo.setEnabled(false);
+                    bIzquierda.setEnabled(false);
+                    bDerecha.setEnabled(false);
                 }
             });
 
@@ -61,15 +70,30 @@ public class BarrioMagia extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     startActivity(mercado);
+                    bAbajo.setEnabled(false);
+                    bIzquierda.setEnabled(false);
+                    bDerecha.setEnabled(false);
                 }
             });
 
             comprar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    new MagiaDialog(context);
+                    new MagiaDialog(context, toast);
                 }
             });
+
+            YoYo.with(Techniques.BounceInLeft)
+                    .duration(2000)
+                    .playOn(bIzquierda);
+
+            YoYo.with(Techniques.BounceInRight)
+                    .duration(2000)
+                    .playOn(bDerecha);
+
+            YoYo.with(Techniques.BounceInUp)
+                    .duration(2000)
+                    .playOn(bAbajo);
 
         }
 

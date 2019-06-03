@@ -6,26 +6,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class Ayuda extends AppCompatActivity {
+import com.dalealdado.dalealdado.R;
 
-    ImageView derecha;
-    Intent ayuda2;
+public class TablonActivity extends AppCompatActivity {
+
+    ImageView hoja;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ayuda);
+        setContentView(R.layout.activity_tablon);
 
-        derecha = findViewById(R.id.image3);
-        ayuda2 = new Intent(this, Ayuda2.class);
+        hoja = findViewById(R.id.hoja);
 
-        derecha.setOnClickListener(new View.OnClickListener() {
+        hoja.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(ayuda2);
+                startActivity(new Intent(TablonActivity.this, MisionActivity.class));
             }
         });
-
 
     }
 }

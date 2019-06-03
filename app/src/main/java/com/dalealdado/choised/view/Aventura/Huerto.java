@@ -63,6 +63,7 @@ public class Huerto extends Activity {
             @Override
             public void onClick(View v) {
                 startActivity(intent1);
+                mIzquierda.setEnabled(false);
             }
         });
 

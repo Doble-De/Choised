@@ -23,7 +23,7 @@ public class ArmeriaDialog {
     TextView text1, text2, text3, text1_2, text2_2, text3_2, dinero;
     int restDinero;
 
-    public ArmeriaDialog(final Context context){
+    public ArmeriaDialog(final Context context, final Toast toast){
         final Dialog dialog = new Dialog(context);
         Window window = dialog.getWindow();
         window.setGravity(Gravity.TOP);
@@ -78,7 +78,7 @@ public class ArmeriaDialog {
                             dinero.setText(Protagonista.getDinero() + "");
                             Protagonista.setEspada(false);
                         } else {
-                            Toast.makeText(context, "No tienes suficiente dinero para comprar ese objeto.", Toast.LENGTH_SHORT);
+                            toast.makeText(context, "No tienes suficiente dinero para comprar ese objeto.", Toast.LENGTH_SHORT);
                             System.out.println("No tienes suficiente dinero");
                         }
                     }
@@ -103,7 +103,7 @@ public class ArmeriaDialog {
                             dinero.setText(Protagonista.getDinero() + "");
                             Protagonista.setEscudo(false);
                         } else {
-                            Toast.makeText(context, "No tienes suficiente dinero para comprar ese objeto.", Toast.LENGTH_SHORT);
+                            toast.makeText(context, "No tienes suficiente dinero para comprar ese objeto.", Toast.LENGTH_SHORT);
                             System.out.println("No tienes suficiente dinero");
                         }
                     }

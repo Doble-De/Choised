@@ -2,11 +2,11 @@ package com.dalealdado.choised.model;
 
 public class Jabali {
 
-    int vida = 60;
-    int fuerza = 10;
-    int agilidad= 10;
-    int dinero=2;
-    String nombre="Jabalí";
+    private int vida = 60;
+    private int fuerza = 10;
+    private int agilidad= 10;
+    private int dinero=2;
+    private String nombre="Jabalí";
 
     public void setVida(int vida) {
         this.vida = vida;

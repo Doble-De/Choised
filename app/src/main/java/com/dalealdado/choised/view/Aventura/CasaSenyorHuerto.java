@@ -22,7 +22,7 @@ public class CasaSenyorHuerto extends AppCompatActivity {
         mDerecha = findViewById(R.id.derecha6);
 
         intent1 = new Intent(this, Fuente.class);
-        //intent2 = new Intent(this, Huerto.class);
+        intent2 = new Intent(this, Huerto.class);
 
         mArriba.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,12 +31,12 @@ public class CasaSenyorHuerto extends AppCompatActivity {
             }
         });
 
-        //mDerecha.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(intent2);
-//            }
-//        });
+        mDerecha.setOnClickListener(new View.OnClickListener() {
+           @Override
+            public void onClick(View v) {
+                startActivity(intent2);
+            }
+        });
 
     }
 }

@@ -57,7 +57,7 @@
                     android:id="@+id/cardImagen"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:background="@drawable/espada" />
+                    android:background="@drawable/espada_tienda" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -86,7 +86,7 @@
                         android:id="@+id/text3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="+2 al dado de ataque. Vale 20 de oro."
+                        android:text="+2 al dado de ataque. Vale 15 de oro."
                         android:textColor="#000000"
                         android:textSize="13dp" />
 
@@ -111,9 +111,9 @@
 
                 <ImageView
                     android:id="@+id/cardImagen2"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:background="@drawable/escudo" />
+                    android:layout_width="106dp"
+                    android:layout_height="132dp"
+                    android:background="@drawable/escudo_tienda" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -134,6 +134,7 @@
                         android:id="@+id/text2_2"
                         android:layout_width="223dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
                         android:text="Este escudo protegio al gran Arturo rey de Reinos."
                         android:textColor="#000000"
                         android:textSize="13dp" />
@@ -142,7 +143,8 @@
                         android:id="@+id/text3_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="+2 al dado de defensa. Vale 20 de oro."
+                        android:layout_marginLeft="20dp"
+                        android:text="+2 al dado de defensa. Vale 10 de oro."
                         android:textColor="#000000"
                         android:textSize="12dp" />
 

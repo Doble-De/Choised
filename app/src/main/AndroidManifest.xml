@@ -34,6 +34,7 @@
         <activity android:name="com.dalealdado.choised.view.Aventura.Bosque2" />
         <activity android:name="com.dalealdado.choised.view.Aventura.CasaSenyorHuerto" />
         <activity android:name="com.dalealdado.choised.view.Aventura.Bosque1" />
+        <activity android:name="com.dalealdado.choised.view.Aventura.Huerto" />
         <activity android:name="com.dalealdado.choised.view.Aventura.Castillo" />
         <activity android:name="com.dalealdado.choised.view.Aventura.Mercado" />
         <activity android:name="com.dalealdado.choised.view.Aventura.BarrioArma" />

@@ -50,10 +50,10 @@ public class MagiaDialog {
         dinero.setText(Protagonista.getDinero()+ "");
 
         if (!Protagonista.getEmblema()){
-            text1_2.setText("VENDIDO");
-            text1_2.setTextColor(R.drawable.castillo);
-            text2_2.setText("");
-            text3_2.setText("");
+            text1_3.setText("VENDIDO");
+            text1_3.setTextColor(R.drawable.castillo);
+            text2_3.setText("");
+            text3_3.setText("");
             emblema.setBackgroundColor(R.drawable.castillo);
         }
 

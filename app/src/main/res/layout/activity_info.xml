@@ -35,6 +35,7 @@
                 android:gravity="center"
                 android:text="Ayuda"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/black"
                 android:textSize="60dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -48,6 +49,7 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/princess_sofia"
                 android:text="Inicio"
+                android:textColor="@android:color/black"
                 android:textSize="30sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tituloPantalla" />
@@ -119,6 +121,7 @@
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/bad_script"
                 android:text="En la pantalla de inicio podrás acceder a las diferentes funcionalidades de la aplicación."
+                android:textColor="@android:color/background_dark"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -133,6 +136,7 @@
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/princess_sofia"
                 android:text="1. Dados"
+                android:textColor="@android:color/background_dark"
                 android:textSize="30sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/infoinicio" />
@@ -146,6 +150,7 @@
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/bad_script"
                 android:text="Esta es la sección de dados, imprescindibles para cualquier partida de rol o muchos juegos de mesa."
+                android:textColor="@android:color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -162,6 +167,7 @@
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/bad_script"
                 android:text="Como podemos ver disponemos de todos los dados para jugar a Rol:         \n\n-Dado de 6         \n-Dado de 4         \n-Dado de 8         \n-Dado de 10         \n-Dado de 12         \n-Dado de 20         \n-Dado de 100 \n\nAdemás de la opción para tirar el dado de 100 mas las unidades con el dado de 10 que también es una tirada bastante común en las partidas. \n\nLa forma de tirar los dados es muy simple, pulsando el dado que queremos tirar hará un lanzamiento del mismo, aunque también podemos mover el móvil para tirar los dados como se suele hacer normalmente."
+                android:textColor="@android:color/background_dark"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -187,6 +193,7 @@
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/princess_sofia"
                 android:text="2. Escenarios"
+                android:textColor="@android:color/background_dark"
                 android:textSize="30sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/dadosinfo" />
@@ -200,6 +207,7 @@
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/bad_script"
                 android:text="La pantalla ideal para todo Máster de partidas de Rol, en ella podrás tener un registro de todos los escenarios por los que los jugadores pasaran."
+                android:textColor="@android:color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -237,6 +245,7 @@
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/bad_script"
                 android:text="Como podemos ver en la pantalla nos aparacerán todos los registros que hemos hecho, y para añadir nuevos tendremos que darle al botón '+' de la parte inferior derecha, una vez que le hayamos dado tendremos que rellenar los datos y darle al botón 'guardar' para almacenarlo."
+                android:textColor="@android:color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -263,6 +272,7 @@
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/bad_script"
                 android:text="Para acceder a un Escenario ya creado habrá que darle al recuadro del mismo y accederemos a la pantalla donde se muestra la información registrada."
+                android:textColor="@android:color/background_dark"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -277,6 +287,7 @@
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/princess_sofia"
                 android:text="3. Personajes"
+                android:textColor="@android:color/black"
                 android:textSize="30sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/info2Escenarios" />
@@ -290,6 +301,7 @@
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/bad_script"
                 android:text="Con esta funcionalidad todos los jugadores podrán tener un registro de sus personajes de todas las partidas que quiera, además el Máster podrá registrar los enemigo que los héroes se encontraran en la aventura."
+                android:textColor="@android:color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -327,6 +339,7 @@
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/bad_script"
                 android:text="Como podemos ver hay una pantalla para cada categoría, para de esta forma separar los héroes de los enemigo, la forma de añadir un nuevo héroe es muy simple, pulsando el botón '+', nos llevara a una pantalla para introducir los datos,despúes le daremos al boton 'Guardar' para almacenar los datos."
+                android:textColor="@android:color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -375,6 +388,7 @@
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/bad_script"
                 android:text="Una vez que lo guardemos, para acceder a su ficha desde su pantalla correspondiente tendremos que darle al recuadro del personaje que queremos ver y se nos abrirá una pantalla con la ficha del mismo."
+                android:textColor="@android:color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -403,59 +417,22 @@
                 app:layout_constraintStart_toEndOf="@+id/imagenshowheroes"
                 app:layout_constraintTop_toBottomOf="@+id/info2Personajes" />
 
-            <TextView
-                android:id="@+id/tituloTienda"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/princess_sofia"
-                android:text="4. Tienda"
-                android:textSize="30sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imagenshowenemigos" />
-
-            <TextView
-                android:id="@+id/subTienda"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="18dp"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="@font/bad_script"
-                android:text="En esta pantalla el Máster podrá tener un registro de lo que los usuarios puedan comprar en la tienda, haciendo de una forma más dinámica la interacción de los jugadores con la tienda."
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tituloTienda" />
-
-            <ImageView
-                android:id="@+id/imagenshop"
-                android:layout_width="128dp"
-                android:layout_height="229dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="22dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/subTienda" />
-
 
             <TextView
                 android:id="@+id/dvinfo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/bad_script"
                 android:text="Aplicación creada por 'David Delgado' para la asignatura M07 Desemvolupament d'interfícies."
+                android:textColor="@android:color/black"
                 android:textSize="10sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imagenshop" />
+                app:layout_constraintTop_toBottomOf="@+id/imagenshowheroes" />
 
             <ImageView
                 android:id="@+id/imagencc"

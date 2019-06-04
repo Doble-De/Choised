@@ -25,7 +25,7 @@ public class CastilloDialog {
     String [] historia= {"¡Alto ahi!","Eiiii, cuidado con esa espada","Soy la Ley, cuidado conmigo eh","Sisi tranquilo...","pensaria: este viejo esta loco"};
     String [] aviso={"*el anciano estaria un poco en babia*","Ehhh... Hola.","Eh eh eh ah sisi","Soy la Ley, as...", "Si si, ya me se el cuento...", "escucha tengo una cosa importante que decirte.","Seguro que no es tan importante"};
     String [] contarlo={"¡Si lo es!","He escuchado que esta noche van a matar al rey","hay que contarselo y ponerlo a salvo","Espera un momento...", "¿cres que me voy a creer todo eso?", "Es verdad juro que lo he escuchado","¿Pero acaso tienes pruebas?"};
-    String [] nocontarlo={"Sii..., tienes razon no es para tanto", "Ya me lo imaginava... Estos jovenes de hoy dia...", "Bueno me voy"};
+    String [] nocontarlo={"Sii..., tienes razon no es para tanto", "Ya me lo imaginava... Estos forasteros...", "Bueno me voy"};
     String [] sinpruebas={"Ehh... Pues no la verdad que no", "pero que lo he escuchado enserio","Claro que si... Hummmm... Sospechoso", "En realidad solo te veo a ti hablando...", "Hablando de ¡MATAR AL REY!", "¿¡QUE!? Si osea pero porque lo he oido", "No me fio... !SOLDADOS¡", "¡NOOOO, SOLO QUERIA AVISAR!", "Estas detenido, seras encarcelado hasta nuevo aviso"};
     String [] conpruebas={"Pues si, he encontrado esta carta en la cueva del bosque", "*le entrega la carta*","*la leeria atentamente*","¡NO PUEDE SER!","¿El ministro quiere matar al rey?","Si, es lo que te estaba diciendo","Gacias por tus servicios al rey", "Se te recompensara"};
 
@@ -54,6 +54,11 @@ public class CastilloDialog {
         pj.setImageResource(R.color.transparente);
         npc.setImageResource(R.color.transparente);
 
+        YoYo.with(Techniques.Flash)
+                .duration(10000)
+                .repeat(100)
+                .playOn(next);
+
         name.setText("");
         if (!Protagonista.getAviso()){
             turnonpc();
@@ -79,7 +84,7 @@ public class CastilloDialog {
                     carta = true;
                     decirlo = false;
                     cont2 = 1;
-                    texto.setText(contarlo[0]);
+                    texto.setText(conpruebas[0]);
                 }
                 else {
                     YoYo.with(Techniques.ZoomOut)
@@ -94,7 +99,7 @@ public class CastilloDialog {
 
                     decirlo = true;
                     cont = 0;
-                    texto.setText(conpruebas[0]);
+                    texto.setText(contarlo[0]);
                 }
 
             }
@@ -132,7 +137,7 @@ public class CastilloDialog {
                     turnoprota();
                     pasar = true;
                     cont = 0;
-                    texto.setText(sinpruebas[0]);
+                    texto.setText(nocontarlo[0]);
                 }
             }
         });

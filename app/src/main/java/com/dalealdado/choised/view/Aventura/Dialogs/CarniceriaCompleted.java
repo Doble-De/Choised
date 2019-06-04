@@ -50,6 +50,11 @@ public class CarniceriaCompleted {
         turnoprota();
         texto.setText(historia[0]);
 
+        YoYo.with(Techniques.Flash)
+                .duration(10000)
+                .repeat(100)
+                .playOn(next);
+
         opcion1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -226,7 +231,11 @@ public class CarniceriaCompleted {
     void turnonpc(){
         pj.setImageResource(R.color.transparente);
         npc.setImageResource(R.drawable.viejo_carnicero);
-        name.setText("Anciano Carnicero");
+        if (Protagonista.getAviso()){
+            name.setText("Anciano Pluriempleado");
+        }else {
+            name.setText("Anciando Carnicero");
+        }
     }
 }
 

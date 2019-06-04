@@ -26,7 +26,6 @@ public class InfoActivity extends AppCompatActivity {
         Glide.with(this).load(R.drawable.heroesshow).into((ImageView)findViewById(R.id.imagenshowheroes));
         Glide.with(this).load(R.drawable.enemigosshow).into((ImageView)findViewById(R.id.imagenshowenemigos));
         Glide.with(this).load(R.drawable.botons).into((ImageView)findViewById(R.id.imagenbutons));
-        Glide.with(this).load(R.drawable.tienda).into((ImageView)findViewById(R.id.imagenshop));
         Glide.with(this).load(R.drawable.cc).into((ImageView)findViewById(R.id.imagencc));
     }
 

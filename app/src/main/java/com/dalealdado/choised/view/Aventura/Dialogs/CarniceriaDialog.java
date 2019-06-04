@@ -22,7 +22,7 @@ public class CarniceriaDialog{
     Button opcion1, opcion2;
     int cont = 0, cont2 = 0;
     boolean money=false, listo = false;
-    String [] historia= {"Hola, ¿es usted el carnicero?", "Hola muchacho, lo siento, pero no tengo genero.", "Si.. A eso venia, acepto la misión de la carne.","Fantastico, pues rapidito que tengo prisa","susurra: Que borde..."};
+    String [] historia= {"Hola, ¿es usted el carnicero?", "Buenas tardes, lo siento, pero no tengo genero.", "Si.. A eso venia, acepto la misión de la carne.","Fantastico, pues rapidito que tengo prisa","susurra: Que borde..."};
     String [] dinero={"Pues, tendre que pedirle que me de un adelanto","¿¡COOOOOMOOOOOOO!?", "Pero si no has hecho nada todabia, como te voy a adelanar nada", "Asi es como trabajo, si no quiere me voy a otro lado","...", "Que remedio", "RECIBES 10 DE ORO", "Muy bien, me pongo en marcha"};
     String [] ready ={"¿Has dicho algo?", "No no", "Bueno, voy a por la carne", "Por fin...", "¬︹¬"};
     public CarniceriaDialog(final Context context){
@@ -43,6 +43,10 @@ public class CarniceriaDialog{
         turnoprota();
         texto.setText(historia[0]);
 
+        YoYo.with(Techniques.Flash)
+                .duration(10000)
+                .repeat(100)
+                .playOn(next);
 
         opcion1.setOnClickListener(new View.OnClickListener() {
             @Override

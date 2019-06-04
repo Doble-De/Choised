@@ -9,6 +9,8 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.dalealdado.choised.model.Protagonista;
 import com.dalealdado.dalealdado.R;
 
@@ -40,6 +42,10 @@ public class PreCuevaDialog {
         texto.setText(historia[0]);
 
 
+        YoYo.with(Techniques.Flash)
+                .duration(10000)
+                .repeat(100)
+                .playOn(next);
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override

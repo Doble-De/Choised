@@ -53,6 +53,10 @@ public class Bosque1Dialog {
         turnonpc();
         texto.setText(historia[0]);
 
+        YoYo.with(Techniques.Flash)
+                .duration(10000)
+                .repeat(100)
+                .playOn(next);
 
         opcion1.setOnClickListener(new View.OnClickListener() {
             @Override

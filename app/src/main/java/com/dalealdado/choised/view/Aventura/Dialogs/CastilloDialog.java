@@ -22,12 +22,12 @@ public class CastilloDialog {
     Button opcion1, opcion2;
     int cont = 1, cont2 = 1;
     boolean decirlo=false, pasar = false, carta=false, sincarta=false;
-    String [] historia= {"¡Alto ahi!","Eiiii, cuidado con esa espada","Soy la Ley, cuidado conmigo eh","Sisi tranquilo...","pensaria: este viejo esta loco"};
-    String [] aviso={"*el anciano estaria un poco en babia*","Ehhh... Hola.","Eh eh eh ah sisi","Soy la Ley, as...", "Si si, ya me se el cuento...", "escucha tengo una cosa importante que decirte.","Seguro que no es tan importante"};
-    String [] contarlo={"¡Si lo es!","He escuchado que esta noche van a matar al rey","hay que contarselo y ponerlo a salvo","Espera un momento...", "¿cres que me voy a creer todo eso?", "Es verdad juro que lo he escuchado","¿Pero acaso tienes pruebas?"};
-    String [] nocontarlo={"Sii..., tienes razon no es para tanto", "Ya me lo imaginava... Estos forasteros...", "Bueno me voy"};
-    String [] sinpruebas={"Ehh... Pues no la verdad que no", "pero que lo he escuchado enserio","Claro que si... Hummmm... Sospechoso", "En realidad solo te veo a ti hablando...", "Hablando de ¡MATAR AL REY!", "¿¡QUE!? Si osea pero porque lo he oido", "No me fio... !SOLDADOS¡", "¡NOOOO, SOLO QUERIA AVISAR!", "Estas detenido, seras encarcelado hasta nuevo aviso"};
-    String [] conpruebas={"Pues si, he encontrado esta carta en la cueva del bosque", "*le entrega la carta*","*la leeria atentamente*","¡NO PUEDE SER!","¿El ministro quiere matar al rey?","Si, es lo que te estaba diciendo","Gacias por tus servicios al rey", "Se te recompensara"};
+    String [] historia= {"¡Alto ahí!","Eiiii, cuidado con esa espada","Soy la Ley, cuidado conmigo eh","Sisi tranquilo...","*pensaría:* este viejo esta loco"};
+    String [] aviso={"*el anciano estaría un poco en babia*","Ehhh... Hola.","Eh eh eh ah sisi","Soy la Ley, as...", "Si si, ya me sé el cuento...", "escucha tengo una cosa importante que decirte.","Seguro que no es tan importante"};
+    String [] contarlo={"¡Si lo es!","He escuchado que esta noche van a matar al rey","hay que contárselo y ponerlo a salvo","Espera un momento...", "¿cres que me voy a creer todo eso?", "Es verdad juro que lo he escuchado","¿Pero acaso tienes pruebas?"};
+    String [] nocontarlo={"Sii..., tienes razón no es para tanto", "Ya me lo imaginaba... Estos forasteros...", "Bueno me voy"};
+    String [] sinpruebas={"Ehh... Pues no la verdad que no", "pero que lo he escuchado enserio","Claro que sí... Hummmm... Sospechoso", "En realidad solo te veo a ti hablando...", "Hablando de ¡MATAR AL REY!", "¿¡QUE!? Si osea pero porque lo he oído", "No me fio... !SOLDADOS¡", "¡NOOOO, SOLO QUERIA AVISAR!", "Estas detenido, serás encarcelado hasta nuevo aviso"};
+    String [] conpruebas={"Pues sí, he encontrado esta carta en la cueva del bosque", "*le entrega la carta*","*la leería atentamente*","¡NO PUEDE SER!","¿El ministro quiere matar al rey?","Si, es lo que te estaba diciendo","Gracias por tus servicios al rey", "Se te recompensara"};
 
     public interface fin{
         void numerofin(int id);

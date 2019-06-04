@@ -18,8 +18,8 @@ public class PreCuevaDialog {
 
     TextView name, texto;
     ImageView pj, npc, next;
-    String [] historia= {"*se verian dos hombres hablando a lo lejos* ", "Bueno, ¿ya lo tienes todo listo?", "Si, pero no creo que sea tan facil como lo pintas...", "pero tu pagas tu mandas.",
-    "Sii, confia en mi", "ese viejales pluriempleado no va a ser un problema","JAJAJAJAJAJA","Mantente escondido en la cueva, esta noche empezara todo", "Por fin sere el Rey", "No se si esto saldra bien...","*uno de los hombres se perderderia en el bosque, el otro se meteria en la cueva*","*"+Protagonista.getNombre()+" se quedaria sorprendido*", "Parece que quieren matar al Rey...", "!Deberia que hacer algo!"};
+    String [] historia= {"*se verían dos hombres hablando a lo lejos* ", "Bueno, ¿ya lo tienes todo listo?", "Si, pero no creo que sea tan fácil como lo pintas...", "pero tu pagas tu mandas.",
+    "Sii, confía en mi", "ese viejales pluriempleado no va a ser un problema","JAJAJAJAJAJA","Mantente escondido en la cueva, esta noche empezara todo", "Por fin seré el Rey", "No sé si esto saldrá bien...","*uno de los hombres se perderdería en el bosque, el otro se metería en la cueva*","*"+Protagonista.getNombre()+" se quedaría sorprendido*", "Parece que quieren matar al Rey...", "!Debería que hacer algo!"};
     int cont = 1;
 
     public PreCuevaDialog(final Context context){

@@ -59,7 +59,7 @@
 
     <TextView
         android:id="@+id/texto2"
-        android:layout_width="367dp"
+        android:layout_width="349dp"
         android:layout_height="62dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
@@ -78,7 +78,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:text="nunca más tenras que cazar jablíes"
+        android:text="nunca más tendrás que cazar jabalíes"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"

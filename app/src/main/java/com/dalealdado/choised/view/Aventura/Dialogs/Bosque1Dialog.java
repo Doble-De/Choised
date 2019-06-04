@@ -22,8 +22,8 @@ public class Bosque1Dialog {
     Button opcion1, opcion2;
     int cont = 1, cont2 = 0;
     boolean pagar = false, pelear= false;
-    String[] historia = {"Vaya vaya...", "Parece que hay un intruso en mi bosque","¿Ehh? ¿Como que tu bosque?", "Como lo oyes, he vivido en este bosque toda mi vida","por lo tanto es mi bosque","Vaya logica...","He visto que has estado cazando jabalies","Si, para el carnicero de la ciudad","No me importa, o me pagas 20 de oro de comision...","O lo vas a pasar mal","¿¡QUE!?"};
-    String[] dinero = {"Bueno, toma...","HAS PERDIDO 20 DE ORO","JAJAJAJAJAJAJA","Asi me gusta","gente que sepa lo que es de lo demas.","Quedate por aqui el tiempo que quieras", "ahora eres mi invitado","Ehh... Gracias supongo","Venga que vaya bien"};
+    String[] historia = {"Vaya vaya...", "Parece que hay un intruso en mi bosque","¿Ehh? ¿Como que tu bosque?", "Como lo oyes, he vivido en este bosque toda mi vida","por lo tanto es mi bosque","Vaya lógica...","He visto que has estado cazando jabalíes","Si, para el carnicero de la ciudad","No me importa, o me pagas 20 de oro de comisión...","O lo vas a pasar mal","¿¡QUE!?"};
+    String[] dinero = {"Bueno, toma...","HAS PERDIDO 20 DE ORO","JAJAJAJAJAJAJA","Así me gusta","gente que sepa lo que es de lo demás.","Quédate por aquí el tiempo que quieras", "ahora eres mi invitado","Ehh... Gracias supongo","Venga que vaya bien"};
     String[] pelea = {"No te voy a dar nada", "Te vas a arrepentir", "Ya veremos..."};
 
 

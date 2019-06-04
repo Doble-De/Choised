@@ -18,7 +18,7 @@ import com.dalealdado.dalealdado.R;
 public class Bosque3Proibido {
     TextView name, texto;
     ImageView pj, npc, next;
-    String [] historia= {"Parece que se trama algo dento...", "antes de investigar completare la misión."};
+    String [] historia= {"Parece que se trama algo dentro...", "antes de investigar completare la misión."};
     int cont = 0;
     public Bosque3Proibido(final Context context){
         final Dialog dialog = new Dialog(context);

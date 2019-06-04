@@ -47,7 +47,7 @@ public class FinalCombate extends AppCompatActivity {
 
         if (tipo == winjabali){
             titulo.setText("¡HAS GANADO!");
-            subtitulo.setText("Botin obtenido:");
+            subtitulo.setText("Botín obtenido:");
             oro.setText("Oro: "+dinero);
             Protagonista.setDinero(Protagonista.getDinero()+dinero);
             carne.setVisibility(View.VISIBLE);
@@ -55,7 +55,7 @@ public class FinalCombate extends AppCompatActivity {
             continuar.setText("PULSA PARA CONTINUAR LA AVENTURA");
         }else if (tipo == win){
             titulo.setText("¡HAS GANADO!");
-            subtitulo.setText("Botin obtenido:");
+            subtitulo.setText("Botín obtenido:");
             oro.setText("Oro: "+dinero);
             Protagonista.setDinero(Protagonista.getDinero()+dinero);
             carne.setVisibility(View.INVISIBLE);

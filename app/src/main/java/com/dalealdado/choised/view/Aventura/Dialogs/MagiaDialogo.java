@@ -15,15 +15,16 @@ import com.daimajia.androidanimations.library.YoYo;
 import com.dalealdado.choised.model.Protagonista;
 import com.dalealdado.dalealdado.R;
 
-public class CarniceriaNormal {
+public class MagiaDialogo {
 
     TextView name, texto;
     ImageView pj, npc, next;
     Button opcion1, opcion2;
-    int cont = 0;
-    boolean salir=false, nosalir = false;
-    String [] historia= {"¿Ya tienes la carne?","Ehh... No, todavía no...", "Sera posible...","¿Sabes cómo se hace no?","Recuérdemelo...","Tienes que buscar el rastro de pisadas de jabalí en el bosque","Toca las pisadas para ver si son recientes y seguro que lo encuentras.","Sisi, ya lo sabía..." ,"Pues no pierdas el tiempo","-.-'"};
-    public CarniceriaNormal(final Context context){
+    int cont=0;
+    String[] historia = {"Una cosa te voy a decir...","un mago nunca llega tarde.","...","Cosas de magia.","Entra en la tienda si quieres comprar algo."};
+
+
+    public MagiaDialogo(final Context context){
         final Dialog dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(false);
@@ -51,12 +52,12 @@ public class CarniceriaNormal {
             @Override
             public void onClick(View v) {
                 cont++;
-                    if (cont == historia.length) {
-                        dialog.dismiss();
+                if (cont == historia.length) {
+                    dialog.dismiss();
 
-                    } else {
-                        ponerTexto();
-                    }
+                } else {
+                    ponerTexto();
+                }
 
 
             }
@@ -70,37 +71,17 @@ public class CarniceriaNormal {
         switch (cont){
             case 1:
                 texto.setText(historia[cont]);
-                turnoprota();
                 break;
             case 2:
                 texto.setText(historia[cont]);
-                turnonpc();
+                turnoprota();
                 break;
             case 3:
                 texto.setText(historia[cont]);
+                turnonpc();
                 break;
             case 4:
                 texto.setText(historia[cont]);
-                turnoprota();
-                break;
-            case 5:
-                texto.setText(historia[cont]);
-                turnonpc();
-                break;
-            case 6:
-                texto.setText(historia[cont]);
-                break;
-            case 7:
-                texto.setText(historia[cont]);
-                turnoprota();
-                break;
-            case 8:
-                texto.setText(historia[cont]);
-                turnonpc();
-                break;
-            case 9:
-                texto.setText(historia[cont]);
-                turnoprota();
                 break;
         }
     }
@@ -144,11 +125,8 @@ public class CarniceriaNormal {
 
     void turnonpc(){
         pj.setImageResource(R.color.transparente);
-        npc.setImageResource(R.drawable.viejo_carnicero);
-        if (Protagonista.getAviso()){
-            name.setText("Anciano Pluriempleado");
-        }else {
-            name.setText("Anciando Carnicero");
-        }
+        npc.setImageResource(R.drawable.viejo_magia);
+        name.setText("Viejo Magico");
+
     }
 }

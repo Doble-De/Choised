@@ -19,7 +19,7 @@ public class Cueva1Dialog {
 
     TextView name, texto;
     ImageView pj, npc, next;
-    String [] historia= {"¿Que es esto que hay en el suelo?", "*en el suelo habria una carta que "+Protagonista.getNombre()+" cojeria y la leeria*","¡Es una carta con el plan para matar al Rey!","Iré al castillo para enseñarselo a la guardia real"};
+    String [] historia= {"¿Qué es esto que hay en el suelo?", "*en el suelo habría una carta que "+Protagonista.getNombre()+" cogería y la leería*","¡Es una carta con el plan para matar al Rey!","Iré al castillo para enseñárselo a la guardia real"};
     int cont = 0;
     public Cueva1Dialog(final Context context){
         final Dialog dialog = new Dialog(context);

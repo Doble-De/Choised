@@ -19,8 +19,8 @@ public class FuenteDialog {
 
     TextView name, texto;
     ImageView pj, npc, next;
-    String [] historia= {"Bueno, ya estoy en el pueblo", "*cogeria la hoja y miraria la mison*", "... 6 trozos de carne de jabali ...", "Buscare la carniceria para preguntarle al carnicero, a ver que me dice"};
-    String [] aviso= {"Por ahi se va al Bosque...", "Primero me tendria que pasar por la carniceria.", "Parece que las tiendas estan por arriba."};
+    String [] historia= {"Bueno, ya estoy en el pueblo", "*cogería la hoja y miraría la misión*", "... 6 trozos de carne de jabalí ...", "Buscare la carnicería para preguntarle al carnicero, a ver qué me dice"};
+    String [] aviso= {"Por ahí se va al Bosque...", "Primero me tendría que pasar por la carnicería.", "Parece que las tiendas están por arriba."};
     int cont = 1;
     public FuenteDialog(final Context context){
         final Dialog dialog = new Dialog(context);

@@ -22,9 +22,9 @@ public class CarniceriaCompleted {
     Button opcion1, opcion2;
     int cont = 0, cont2 = 0;
     boolean salir=false, nosalir = false;
-    String [] historia= {"Bueno, ya tengo su carne", "¡Fantastico!", "Pues toma por la rapdez de doy algo más","HAS GANADO 20 de ORO", "¡Gracias! Me viene estupendo","Venga, si consigues 6 más no dudes en pasarte", "¡Vale Gracias!"};
-    String [] fin={"En realidad ya he cumplido la misión","si, supongo que me ire ya.","¡Toca descansar un poco!"};
-    String [] continuar={"Si, me quedare por aqui un rato más","creo que hay cosas interesantes que hacer."};
+    String [] historia= {"Bueno, ya tengo su carne", "¡Fantástico!", "Pues toma por la rapidez de doy algo más","HAS GANADO 20 de ORO", "¡Gracias! Me viene estupendo","Venga, si consigues 6 más no dudes en pasarte", "¡Vale Gracias!"};
+    String [] fin={"En realidad ya he cumplido la misión","si, supongo que me iré ya.","¡Toca descansar un poco!"};
+    String [] continuar={"Si, me quedare por aquí un rato más","creo que hay cosas interesantes que hacer."};
 
     public interface fin{
         void numerofin(int id);

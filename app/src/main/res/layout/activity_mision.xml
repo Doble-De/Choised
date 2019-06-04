@@ -71,7 +71,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="El carnicero de Villa Escasa, esta sin carne de jabalí a pocos días del festín real. Habla con el para que te de más información."
+        android:text="El carnicero de Villa Escasa, esta sin carne de jabalí a pocos días del festín real. Habla con él para que te dé más información."
         android:textColor="@color/colorLetrasMadera"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

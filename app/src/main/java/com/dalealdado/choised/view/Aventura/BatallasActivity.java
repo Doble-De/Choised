@@ -2,6 +2,7 @@ package com.dalealdado.choised.view.Aventura;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
@@ -53,6 +54,7 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_batallas);
         mp = MediaPlayer.create(this, R.raw.slash8);

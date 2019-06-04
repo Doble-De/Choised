@@ -19,7 +19,7 @@ public class Cueva2Dialog  {
     TextView name, texto;
     ImageView pj, npc, next;
     int cont = 0;
-    String [] historia= {"*el amuleto empieza a brillar", "Parece que el amuleto esta reaccionando ante algo aqui...", "¿Que es esa marca de la pared?"};
+    String [] historia= {"*el amuleto empieza a brillar", "Parece que el amuleto está reaccionando ante algo aquí...", "¿Que es esa marca de la pared?"};
 
     public interface fin{
         void numerofin(int id);

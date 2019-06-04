@@ -2,6 +2,7 @@ package com.dalealdado.choised.view.Aventura;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,7 @@ public class Fuente extends AppCompatActivity {
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_fuente);
 

@@ -21,10 +21,10 @@ public class Bosque3Dialog {
     Button opcion1, opcion2;
     int cont = 1, cont2 = 0, cont3=0;
     boolean irse = false, pelear= false;
-    String[] historia = {"Voy a investigar un poco...", "*se enuentra al hombre en su cara*", "¡AHHHHHHH!","Que tenemos aqui, ¿fisgoneando no?"};
-    String[] huir = {"No no, perdon, ¿a la ciudad no se va por aqui?","...","...","...","Ehh... ¿Hola?","¡FUERA DE MI VISTA!", "¡Si señor, adios!"};
-    String[] pelea = {"No voy a permitir que mateis al rey", "Así que lo has oido...", "pues no te voy a poder dejar con vida."};
-    String[] ayuda = {"Alto ahi", "¿Otra molestia?", "Este es mi bosque","y no voy a permitir que amenazes a mi invitado","JAJAJAJAJAJA", "¿Y que vas a hacer?", "Ahora lo veras...", "*el cazador y el bandido se alejarian peleandose*","...", "Es mi oportunidad de entar en la cueva"};
+    String[] historia = {"Voy a investigar un poco...", "*se encuentra al hombre en su cara*", "¡AHHHHHHH!","Que tenemos aquí, ¿fisgoneando no?"};
+    String[] huir = {"No no, perdón, ¿a la ciudad no se va por aquí?","...","...","...","Ehh... ¿Hola?","¡FUERA DE MI VISTA!", "¡Si señor, adiós!"};
+    String[] pelea = {"No voy a permitir que matéis al rey", "Así que lo has oído...", "pues no te voy a poder dejar con vida."};
+    String[] ayuda = {"Alto ahí", "¿Otra molestia?", "Este es mi bosque","y no voy a permitir que amenaces a mi invitado","JAJAJAJAJAJA", "¿Y qué vas a hacer?", "Ahora lo veras...", "*el cazador y el bandido se alejarían peleándose*","...", "Es mi oportunidad de entrar en la cueva"};
 
 
     public interface pelea{

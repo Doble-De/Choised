@@ -9,7 +9,7 @@ import com.dalealdado.choised.model.Enemigo;
 import com.dalealdado.choised.model.Escenario;
 import com.dalealdado.choised.model.Heroe;
 
-@Database(entities = {Heroe.class, Enemigo.class, Escenario.class}, version = 2)
+@Database(entities = {Heroe.class, Enemigo.class, Escenario.class}, version = 6)
 public abstract class DADDatabase extends RoomDatabase {
 
     public abstract DAO DAO();
